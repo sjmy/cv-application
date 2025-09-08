@@ -1,0 +1,72 @@
+Requirements
+
+- component: InputContainer
+  - component: ContactInfoInput
+    - component: NameInput
+      - name
+    - component: EmailInput
+      - email
+    - component: PhoneInput
+      - phone number
+  - component: EducationExperienceInput
+    - component: EducationInput
+      - component: SchoolInput
+        - school name
+    - component: StudyTitleInput
+      - title of study
+    - component: StudyDateInput
+      - date range of study
+  - component: WorkExperienceInput
+    - component: CompanyInput
+      - company name
+    - component: PositionInput
+      - position title
+    - component: DutiesInput
+      - main duties
+      - can have multiple
+    - component: WorkDateInput
+      - date range of work
+- component: DisplayContainer
+  - component: ContactInfoDisplay
+    - component: NameDisplay
+      - name
+    - component: EmailDisplay
+      - email
+    - component: PhoneDisplay
+      - phone number
+  - component: EducationExperienceDisplay
+    - component: EducationDisplay
+      - component: SchoolDisplay
+        - school name
+    - component: StudyTitleDisplay
+      - title of study
+    - component: StudyDateDisplay
+      - date range of study
+  - component: WorkExperienceDisplay
+    - component: CompanyDisplay
+      - company name
+    - component: PositionDisplay
+      - position title
+    - component: DutiesDisplay
+      - main duties
+    - component: WorkDateDisplay
+      - date range of work
+
+
+- edit and submit button for each section of the whole cv
+  - submit button should submit the form and display the value of input fields as HTML elements
+  - edit button should add back and display the input fields, with the previously displayed info as values
+    - should be able to edit and resubmit the content
+
+Ideas
+  - right/centre/left justification for ContactInfoDisplay
+  - Profile component?
+    - blurb about the applicant
+    - optional?
+      - if disabled, condense other sections
+  - style changes
+    - font size, colour of each section
+  - how to deal with too much info on page
+    - shrink font size?
+    - display alert of some kind
+    - character limits on sections?

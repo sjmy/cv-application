@@ -1,10 +1,13 @@
 // import { useState } from "react";
 import "../styles/App.css";
+import Header from "./Header.jsx";
+import Main from "./Main.jsx";
 
 function App() {
   return (
     <>
-      <h1>cv-application</h1>
+      <Header />
+      <Main />
     </>
   );
 }

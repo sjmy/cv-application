@@ -1,4 +1,19 @@
-Requirements
+Project Requirements
+- a section to add general information like name, email and phone number
+- a section to add your educational experience (school name, title of study and date of study)
+- a section to add practical experience (company name, position title, main responsibilities of your jobs, date from and until when you worked for that company)
+
+- edit and submit button for each section of the whole cv
+  - submit button should submit the form and display the value of input fields as HTML elements
+  - edit button should add back and display the input fields, with the previously displayed info as values
+    - should be able to edit and resubmit the content
+
+Structure
+- two containers side by side
+  - left side: InputContainer
+    - contains all input fields for cv
+  - right side: DisplayContainer
+    - displays all information submitted in InputContainer
 
 - component: InputContainer
   - component: ContactInfoInput
@@ -9,23 +24,23 @@ Requirements
     - component: PhoneInput
       - phone number
   - component: EducationExperienceInput
-    - component: EducationInput
+    - component: EducationEntryInput - can add multiple
       - component: SchoolInput
         - school name
-    - component: StudyTitleInput
-      - title of study
-    - component: StudyDateInput
-      - date range of study
+      - component: StudyTitleInput
+        - title of study
+      - component: StudyDateInput
+        - date range of study
   - component: WorkExperienceInput
-    - component: CompanyInput
-      - company name
-    - component: PositionInput
-      - position title
-    - component: DutiesInput
-      - main duties
-      - can have multiple
-    - component: WorkDateInput
-      - date range of work
+    - component: WorkEntryInput - can add multiple
+      - component: CompanyInput
+        - company name
+      - component: PositionInput
+        - position title
+      - component: DutiesInput - can add multiple
+        - main duties
+      - component: WorkDateInput
+        - date range of work
 - component: DisplayContainer
   - component: ContactInfoDisplay
     - component: NameDisplay
@@ -35,28 +50,23 @@ Requirements
     - component: PhoneDisplay
       - phone number
   - component: EducationExperienceDisplay
-    - component: EducationDisplay
+    - component: EducationEntryDisplay
       - component: SchoolDisplay
         - school name
-    - component: StudyTitleDisplay
-      - title of study
-    - component: StudyDateDisplay
-      - date range of study
+      - component: StudyTitleDisplay
+        - title of study
+      - component: StudyDateDisplay
+        - date range of study
   - component: WorkExperienceDisplay
-    - component: CompanyDisplay
-      - company name
-    - component: PositionDisplay
-      - position title
-    - component: DutiesDisplay
-      - main duties
-    - component: WorkDateDisplay
-      - date range of work
-
-
-- edit and submit button for each section of the whole cv
-  - submit button should submit the form and display the value of input fields as HTML elements
-  - edit button should add back and display the input fields, with the previously displayed info as values
-    - should be able to edit and resubmit the content
+    - component: WorkEntryDisplay
+      - component: CompanyDisplay
+        - company name
+      - component: PositionDisplay
+        - position title
+      - component: DutiesDisplay
+        - main duties
+      - component: WorkDateDisplay
+        - date range of work
 
 Ideas
   - right/centre/left justification for ContactInfoDisplay

@@ -1,0 +1,12 @@
+main {
+  margin: 10px;
+  display: flex;
+}
+
+.inputSection {
+  width: 50vw;
+}
+
+.displaySection {
+  width: 50vw;
+}

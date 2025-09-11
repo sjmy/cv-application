@@ -23,7 +23,7 @@ Structure
       - email
     - component: PhoneInput
       - phone number
-  - component: EducationExperienceInput
+  - component: EducationInput
     - component: EducationEntryInput - can add multiple
       - component: SchoolInput
         - school name

@@ -1,7 +1,3 @@
-header {
-  margin: 10px;
-}
-
 h1,
 h2 {
   margin: 0;
@@ -9,22 +5,4 @@ h2 {
 
 p {
   margin: 0;
-}
-
-main {
-  margin: 10px;
-  display: flex;
-}
-
-.inputSection {
-  width: 50vw;
-}
-
-.contactInfo {
-  display: flex;
-  flex-direction: column;
-}
-
-.displaySection {
-  width: 50vw;
 }

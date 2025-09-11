@@ -15,18 +15,33 @@ function JobDescriptionInput() {
   );
 }
 
-function JobDateInput() {
+function JobDateStartInput() {
   return (
-    <div className="jobDateInputContainer">
-      <label htmlFor="jobDate">Date of job: </label>
+    <>
+      <label htmlFor="jobStartDate">Start date of job: </label>
       <input
-        className="jobDateInput"
+        className="jobDateStartInput"
         type="date"
-        placeholder="Date of job"
-        id="jobDate"
+        placeholder="Start date of job"
+        id="jobStartDate"
         autoComplete="off"
       />
-    </div>
+    </>
+  );
+}
+
+function JobDateEndInput() {
+  return (
+    <>
+      <label htmlFor="jobEndDate">End date of job: </label>
+      <input
+        className="jobDateEndInput"
+        type="date"
+        placeholder="End date of job"
+        id="jobEndDate"
+        autoComplete="off"
+      />
+    </>
   );
 }
 
@@ -67,7 +82,10 @@ function WorkInput() {
         <h2>Work experience:</h2>
         <CompanyInput />
         <JobTitleInput />
-        <JobDateInput />
+        <div className="jobDateInputContainer">
+          <JobDateStartInput />
+          <JobDateEndInput />
+        </div>
         <JobDescriptionInput />
       </form>
     </section>

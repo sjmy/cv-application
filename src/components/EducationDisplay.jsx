@@ -1,22 +1,22 @@
 import "../styles/EducationDisplay.css";
 
 // Mock education experience
-const education = [
-  {
-    id: crypto.randomUUID(),
-    school: "The Odin Project",
-    title: "Full-Stack Web Development",
-    start: "Jan 2025",
-    end: "present",
-  },
-  {
-    id: crypto.randomUUID(),
-    school: "Placeholder University",
-    title: "Bachelor of Computer Science",
-    start: "Sept 2017",
-    end: "June 2021",
-  },
-];
+// const education = [
+//   {
+//     id: crypto.randomUUID(),
+//     school: "The Odin Project",
+//     title: "Full-Stack Web Development",
+//     start: "Jan 2025",
+//     end: "present",
+//   },
+//   {
+//     id: crypto.randomUUID(),
+//     school: "Placeholder University",
+//     title: "Bachelor of Computer Science",
+//     start: "Sept 2017",
+//     end: "June 2021",
+//   },
+// ];
 
 function EducationEntryDisplay(entry) {
   return (
@@ -30,9 +30,10 @@ function EducationEntryDisplay(entry) {
   );
 }
 
-function EducationDisplay() {
+function EducationDisplay({ education }) {
   return (
     <section className="educationDisplayContainer">
+      <h2>Education Experience</h2>
       {education.map((entry) => EducationEntryDisplay(entry))}
     </section>
   );

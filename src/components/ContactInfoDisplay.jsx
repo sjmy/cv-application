@@ -1,19 +1,19 @@
 import "../styles/ContactInfoDisplay.css";
 
 // Mock contact info
-const contactInfo = {
-  id: crypto.randomUUID(),
-  name: "Sleve McDichael",
-  email: "smcdich@proton.me",
-  phone: "555-5555",
-};
+// const contactInfo = {
+//   id: crypto.randomUUID(),
+//   name: "Sleve McDichael",
+//   email: "smcdich@proton.me",
+//   phone: "555-5555",
+// };
 
-function ContactInfoDisplay() {
+function ContactInfoDisplay({ contact }) {
   return (
     <section className="contactInfoDisplayContainer">
-      <p>{contactInfo.name}</p>
-      <p>{contactInfo.email}</p>
-      <p>{contactInfo.phone}</p>
+      <p>{contact.name}</p>
+      <p>{contact.email}</p>
+      <p>{contact.phone}</p>
     </section>
   );
 }

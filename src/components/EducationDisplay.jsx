@@ -20,7 +20,7 @@ import "../styles/EducationDisplay.css";
 
 function EducationEntryDisplay(entry) {
   return (
-    <div className="educationEntry" key={entry.id}>
+    <div className="educationEntryDisplay" key={entry.id}>
       <p>{entry.school}</p>
       <p>{entry.title}</p>
       <p>

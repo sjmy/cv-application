@@ -54,9 +54,12 @@ function Main() {
   return (
     <main>
       <section className="inputSection">
-        <ContactInfoInput />
-        <EducationInput />
-        <WorkInput />
+        <ContactInfoInput contact={contact} onContactChange={setContact} />
+        <EducationInput
+          education={education}
+          onEducationChange={setEducation}
+        />
+        <WorkInput work={work} onWorkChange={setWork} />
       </section>
       <section className="displaySection">
         <ContactInfoDisplay contact={contact} />

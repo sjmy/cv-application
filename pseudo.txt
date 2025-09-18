@@ -85,3 +85,6 @@ Ideas
 TODO:
   - dates
     - display formatting, currently getting browser warnings when dates are changed
+  - formatting/styling
+    - add/delete entries for education and work
+    - show/hide sections

@@ -80,3 +80,8 @@ Ideas
     - shrink font size?
     - display alert of some kind
     - character limits on sections?
+
+
+TODO:
+  - dates
+    - display formatting, currently getting browser warnings when dates are changed

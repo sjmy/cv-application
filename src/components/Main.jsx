@@ -62,9 +62,11 @@ function Main() {
         <WorkInput work={work} onWorkChange={setWork} />
       </section>
       <section className="displaySection">
-        <ContactInfoDisplay contact={contact} />
-        <EducationDisplay education={education} />
-        <WorkDisplay work={work} />
+        <div className="displaySectionContainer">
+          <ContactInfoDisplay contact={contact} />
+          <EducationDisplay education={education} />
+          <WorkDisplay work={work} />
+        </div>
       </section>
     </main>
   );

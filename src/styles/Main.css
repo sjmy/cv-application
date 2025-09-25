@@ -4,9 +4,21 @@ main {
 }
 
 .inputSection {
+  display: grid;
   width: 50vw;
+  padding: 50px;
 }
 
 .displaySection {
   width: 50vw;
+  color: black;
+  padding: 50px;
+}
+
+.displaySectionContainer {
+  display: grid;
+  font-size: 0.8vw;
+  aspect-ratio: 8.5 / 11;
+  background-color: white;
+  padding: 10%;
 }

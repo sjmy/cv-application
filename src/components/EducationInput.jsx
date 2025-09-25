@@ -2,24 +2,25 @@ import "../styles/EducationInput.css";
 
 function SchoolInput({ entry, education, onEducationChange }) {
   return (
-    <div className="schoolInputContainer">
-      <label htmlFor="school">School: </label>
-      <input
-        className="schoolInput"
-        type="text"
-        value={entry.school}
-        placeholder="School Name"
-        id="school"
-        autoComplete="off"
-        onChange={(e) =>
-          handleSchoolChange(
-            entry,
-            education,
-            onEducationChange,
-            e.target.value
-          )
-        }
-      />
+    <div className="inputContainer">
+      <label className="inputLabel">
+        School:
+        <input
+          type="text"
+          value={entry.school}
+          placeholder="School Name"
+          id="school"
+          autoComplete="off"
+          onChange={(e) =>
+            handleSchoolChange(
+              entry,
+              education,
+              onEducationChange,
+              e.target.value
+            )
+          }
+        />
+      </label>
     </div>
   );
 }
@@ -43,24 +44,25 @@ function handleSchoolChange(
 
 function StudyTitleInput({ entry, education, onEducationChange }) {
   return (
-    <div className="studyTitleInputContainer">
-      <label htmlFor="studyTitle">Title of study: </label>
-      <input
-        className="studyTitleInput"
-        type="text"
-        value={entry.title}
-        placeholder="Title of study"
-        id="studyTitle"
-        autoComplete="off"
-        onChange={(e) =>
-          handleStudyTitleChange(
-            entry,
-            education,
-            onEducationChange,
-            e.target.value
-          )
-        }
-      />
+    <div className="inputContainer">
+      <label className="inputLabel">
+        Program:
+        <input
+          type="text"
+          value={entry.title}
+          placeholder="Title of study"
+          id="studyTitle"
+          autoComplete="off"
+          onChange={(e) =>
+            handleStudyTitleChange(
+              entry,
+              education,
+              onEducationChange,
+              e.target.value
+            )
+          }
+        />
+      </label>
     </div>
   );
 }
@@ -85,23 +87,24 @@ function handleStudyTitleChange(
 function StudyDateStartInput({ entry, education, onEducationChange }) {
   return (
     <>
-      <label htmlFor="studyStartDate">Start date of study: </label>
-      <input
-        className="studyDateStartInput"
-        type="date"
-        value={entry.start}
-        placeholder="Start date of study"
-        id="studyStartDate"
-        autoComplete="off"
-        onChange={(e) =>
-          handleStudyStartChange(
-            entry,
-            education,
-            onEducationChange,
-            e.target.value
-          )
-        }
-      />
+      <label className="inputLabel">
+        Start date:
+        <input
+          type="date"
+          value={entry.start}
+          placeholder="Start date of study"
+          id="studyStartDate"
+          autoComplete="off"
+          onChange={(e) =>
+            handleStudyStartChange(
+              entry,
+              education,
+              onEducationChange,
+              e.target.value
+            )
+          }
+        />
+      </label>
     </>
   );
 }
@@ -126,23 +129,24 @@ function handleStudyStartChange(
 function StudyDateEndInput({ entry, education, onEducationChange }) {
   return (
     <>
-      <label htmlFor="studyEndDate">End date of study: </label>
-      <input
-        className="studyDateEndInput"
-        type="date"
-        value={entry.end}
-        placeholder="End date of study"
-        id="studyEndDate"
-        autoComplete="off"
-        onChange={(e) =>
-          handleStudyEndChange(
-            entry,
-            education,
-            onEducationChange,
-            e.target.value
-          )
-        }
-      />
+      <label className="inputLabel">
+        End date:
+        <input
+          type="date"
+          value={entry.end}
+          placeholder="End date of study"
+          id="studyEndDate"
+          autoComplete="off"
+          onChange={(e) =>
+            handleStudyEndChange(
+              entry,
+              education,
+              onEducationChange,
+              e.target.value
+            )
+          }
+        />
+      </label>
     </>
   );
 }
@@ -166,7 +170,7 @@ function handleStudyEndChange(
 
 function EducationEntryInput(entry, education, onEducationChange) {
   return (
-    <div className="educationEntryInputContainer" key={entry.id}>
+    <div className="entryInputContainer" key={entry.id}>
       <SchoolInput
         entry={entry}
         education={education}
@@ -177,7 +181,7 @@ function EducationEntryInput(entry, education, onEducationChange) {
         education={education}
         onEducationChange={onEducationChange}
       />
-      <div className="studyDateInputContainer">
+      <div className="dateInputContainer">
         <StudyDateStartInput
           entry={entry}
           education={education}
@@ -195,14 +199,16 @@ function EducationEntryInput(entry, education, onEducationChange) {
 
 function EducationInput({ education, onEducationChange }) {
   return (
-    <section className="educationInputContainer">
-      <form className="educationEntryInput">
-        <h2>Education experience:</h2>
+    <div className="formContainer">
+      <button className="formTitle">
+        <h2>Education Experience</h2>
+      </button>
+      <form className="inputForm">
         {education.map((entry) =>
           EducationEntryInput(entry, education, onEducationChange)
         )}
       </form>
-    </section>
+    </div>
   );
 }
 

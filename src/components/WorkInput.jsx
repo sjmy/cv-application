@@ -2,19 +2,20 @@ import "../styles/WorkInput.css";
 
 function CompanyInput({ entry, work, onWorkChange }) {
   return (
-    <div className="companyInputContainer">
-      <label htmlFor="company">Company: </label>
-      <input
-        className="companyInput"
-        type="text"
-        value={entry.company}
-        placeholder="Company Name"
-        id="company"
-        autoComplete="off"
-        onChange={(e) =>
-          handleCompanyChange(entry, work, onWorkChange, e.target.value)
-        }
-      />
+    <div className="inputContainer">
+      <label className="inputLabel">
+        Company:
+        <input
+          type="text"
+          value={entry.company}
+          placeholder="Company Name"
+          id="company"
+          autoComplete="off"
+          onChange={(e) =>
+            handleCompanyChange(entry, work, onWorkChange, e.target.value)
+          }
+        />
+      </label>
     </div>
   );
 }
@@ -33,19 +34,20 @@ function handleCompanyChange(entryToUpdate, work, onWorkChange, newCompany) {
 
 function JobTitleInput({ entry, work, onWorkChange }) {
   return (
-    <div className="jobTitleInputContainer">
-      <label htmlFor="jobTitle">Title of position: </label>
-      <input
-        className="jobTitleInput"
-        type="text"
-        value={entry.title}
-        placeholder="Title of position"
-        id="jobTitle"
-        autoComplete="off"
-        onChange={(e) =>
-          handleJobTitleChange(entry, work, onWorkChange, e.target.value)
-        }
-      />
+    <div className="inputContainer">
+      <label className="inputLabel">
+        Title:
+        <input
+          type="text"
+          value={entry.title}
+          placeholder="Title of position"
+          id="jobTitle"
+          autoComplete="off"
+          onChange={(e) =>
+            handleJobTitleChange(entry, work, onWorkChange, e.target.value)
+          }
+        />
+      </label>
     </div>
   );
 }
@@ -65,18 +67,19 @@ function handleJobTitleChange(entryToUpdate, work, onWorkChange, newTitle) {
 function JobDateStartInput({ entry, work, onWorkChange }) {
   return (
     <>
-      <label htmlFor="jobStartDate">Start date of job: </label>
-      <input
-        className="jobDateStartInput"
-        type="date"
-        value={entry.start}
-        placeholder="Start date of job"
-        id="jobStartDate"
-        autoComplete="off"
-        onChange={(e) =>
-          handleJobStartChange(entry, work, onWorkChange, e.target.value)
-        }
-      />
+      <label className="inputLabel">
+        Start date:
+        <input
+          type="date"
+          value={entry.start}
+          placeholder="Start date of job"
+          id="jobStartDate"
+          autoComplete="off"
+          onChange={(e) =>
+            handleJobStartChange(entry, work, onWorkChange, e.target.value)
+          }
+        />
+      </label>
     </>
   );
 }
@@ -96,18 +99,19 @@ function handleJobStartChange(entryToUpdate, work, onWorkChange, newStart) {
 function JobDateEndInput({ entry, work, onWorkChange }) {
   return (
     <>
-      <label htmlFor="jobEndDate">End date of job: </label>
-      <input
-        className="jobDateEndInput"
-        type="date"
-        value={entry.end}
-        placeholder="End date of job"
-        id="jobEndDate"
-        autoComplete="off"
-        onChange={(e) =>
-          handleJobEndChange(entry, work, onWorkChange, e.target.value)
-        }
-      />
+      <label className="inputLabel">
+        End date:
+        <input
+          type="date"
+          value={entry.end}
+          placeholder="End date of job"
+          id="jobEndDate"
+          autoComplete="off"
+          onChange={(e) =>
+            handleJobEndChange(entry, work, onWorkChange, e.target.value)
+          }
+        />
+      </label>
     </>
   );
 }
@@ -127,18 +131,24 @@ function handleJobEndChange(entryToUpdate, work, onWorkChange, newEnd) {
 function JobDescriptionInput({ entry, work, onWorkChange }) {
   return (
     <>
-      <label htmlFor="jobDescription">Description of job: </label>
-      <input
-        className="jobDescriptionInput"
-        type="text"
-        value={entry.description}
-        placeholder="Description of job and duties performed"
-        id="jobDescription"
-        autoComplete="off"
-        onChange={(e) =>
-          handleJobDescriptionChange(entry, work, onWorkChange, e.target.value)
-        }
-      />
+      <label className="inputLabel">
+        Description:
+        <input
+          type="text"
+          value={entry.description}
+          placeholder="Description of job and duties performed"
+          id="jobDescription"
+          autoComplete="off"
+          onChange={(e) =>
+            handleJobDescriptionChange(
+              entry,
+              work,
+              onWorkChange,
+              e.target.value
+            )
+          }
+        />
+      </label>
     </>
   );
 }
@@ -162,10 +172,10 @@ function handleJobDescriptionChange(
 
 function WorkEntryInput(entry, work, onWorkChange) {
   return (
-    <div className="workEntryInputContainer" key={entry.id}>
+    <div className="entryInputContainer" key={entry.id}>
       <CompanyInput entry={entry} work={work} onWorkChange={onWorkChange} />
       <JobTitleInput entry={entry} work={work} onWorkChange={onWorkChange} />
-      <div className="jobDateInputContainer">
+      <div className="inputContainer">
         <JobDateStartInput
           entry={entry}
           work={work}
@@ -177,7 +187,7 @@ function WorkEntryInput(entry, work, onWorkChange) {
           onWorkChange={onWorkChange}
         />
       </div>
-      <div className="jobDescriptionInputContainer">
+      <div className="inputContainer">
         <JobDescriptionInput
           entry={entry}
           work={work}
@@ -190,12 +200,14 @@ function WorkEntryInput(entry, work, onWorkChange) {
 
 function WorkInput({ work, onWorkChange }) {
   return (
-    <section className="workInputContainer">
-      <form className="workEntryInput">
-        <h2>Work experience:</h2>
+    <div className="formContainer">
+      <button className="formTitle">
+        <h2>Work Experience</h2>
+      </button>
+      <form className="inputForm">
         {work.map((entry) => WorkEntryInput(entry, work, onWorkChange))}
       </form>
-    </section>
+    </div>
   );
 }
 

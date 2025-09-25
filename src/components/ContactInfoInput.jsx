@@ -2,19 +2,20 @@ import "../styles/ContactInfoInput.css";
 
 function NameInput({ contact, onContactChange }) {
   return (
-    <div className="nameContainerInput">
-      <label htmlFor="name">Full name: </label>
-      <input
-        className="NameInput"
-        type="text"
-        value={contact.name}
-        placeholder="Full Name"
-        id="name"
-        autoComplete="off"
-        onChange={(e) =>
-          handleNameChange(contact, onContactChange, e.target.value)
-        }
-      />
+    <div className="inputContainer">
+      <label className="inputLabel">
+        Full name:
+        <input
+          type="text"
+          value={contact.name}
+          placeholder="Full Name"
+          id="name"
+          autoComplete="off"
+          onChange={(e) =>
+            handleNameChange(contact, onContactChange, e.target.value)
+          }
+        />
+      </label>
     </div>
   );
 }
@@ -26,19 +27,20 @@ function handleNameChange(contact, onContactChange, newName) {
 
 function EmailInput({ contact, onContactChange }) {
   return (
-    <div className="emailContainerInput">
-      <label htmlFor="email">Email: </label>
-      <input
-        className="EmailInput"
-        type="text"
-        value={contact.email}
-        placeholder="Email"
-        id="email"
-        autoComplete="off"
-        onChange={(e) =>
-          handleEmailChange(contact, onContactChange, e.target.value)
-        }
-      />
+    <div className="inputContainer">
+      <label className="inputLabel">
+        Email:
+        <input
+          type="text"
+          value={contact.email}
+          placeholder="Email"
+          id="email"
+          autoComplete="off"
+          onChange={(e) =>
+            handleEmailChange(contact, onContactChange, e.target.value)
+          }
+        />
+      </label>
     </div>
   );
 }
@@ -50,19 +52,19 @@ function handleEmailChange(contact, onContactChange, newEmail) {
 
 function PhoneInput({ contact, onContactChange }) {
   return (
-    <div className="phoneInputContainer">
-      <label htmlFor="phone">Phone number: </label>
-      <input
-        className="PhoneInput"
-        type="tel"
-        value={contact.phone}
-        placeholder="Phone Number"
-        id="phone"
-        autoComplete="off"
-        onChange={(e) =>
-          handlePhoneChange(contact, onContactChange, e.target.value)
-        }
-      />
+    <div className="inputContainer">
+      <label className="inputLabel">
+        Phone number:
+        <input
+          type="tel"
+          value={contact.phone}
+          placeholder="Phone Number"
+          autoComplete="off"
+          onChange={(e) =>
+            handlePhoneChange(contact, onContactChange, e.target.value)
+          }
+        />
+      </label>
     </div>
   );
 }
@@ -74,14 +76,16 @@ function handlePhoneChange(contact, onContactChange, newPhone) {
 
 function ContactInfoInput({ contact, onContactChange }) {
   return (
-    <section className="contactInfoInputContainer">
-      <form className="contactInfoInput">
-        <h2>Contact information:</h2>
+    <div className="formContainer">
+      <button className="formTitle">
+        <h2>Contact Information</h2>
+      </button>
+      <form className="inputForm">
         <NameInput contact={contact} onContactChange={onContactChange} />
         <EmailInput contact={contact} onContactChange={onContactChange} />
         <PhoneInput contact={contact} onContactChange={onContactChange} />
       </form>
-    </section>
+    </div>
   );
 }
 

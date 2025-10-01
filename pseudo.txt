@@ -68,6 +68,15 @@ Structure
       - component: WorkDateDisplay
         - date range of work
 
+Colour Palette HEX Codes (dark to light):
+#030512
+#20304a
+#505e79
+#8e90a7
+#e0d9e0
+#fffcf8ff
+
+
 Ideas
   - how to deal with too much info on page
     - shrink font size?
@@ -84,6 +93,7 @@ Ideas
 TODO:
   - dates
     - display formatting, currently getting browser warnings when dates are changed
+    - add "Present" option
   - formatting/styling
     - add/delete entries for education and work
     - show/hide sections

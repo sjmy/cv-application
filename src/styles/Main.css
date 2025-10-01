@@ -1,5 +1,5 @@
 main {
-  margin: 10px;
+  padding: 10px;
   display: flex;
 }
 
@@ -25,7 +25,7 @@ main {
 }
 
 .formContainer {
-  border: 1px solid grey;
+  border: 2px solid #505e79;
   border-radius: 4px;
   padding: 10px;
 }
@@ -36,24 +36,27 @@ main {
   background-color: inherit;
   border: none;
   padding: 0;
+  padding-bottom: 15px;
   font-size: inherit;
   width: 100%;
 }
 
 input {
-  background-color: rgb(196, 196, 196);
+  color: #fffcf8ff;
+  background-color: #20304a;
   padding: 4px;
-  border: 1px solid grey;
+  border: 1px solid #505e79;
+  border-radius: 4px;
 }
 
 input:hover {
-  background-color: lightgrey;
+  background-color: #505e79;
 }
 
 .inputForm {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
 .inputLabel {
@@ -63,11 +66,24 @@ input:hover {
 
 .entryInputContainer {
   display: grid;
-  gap: 10px;
+  gap: 15px;
+  padding: 10px;
+  border: 1px solid #505e79;
+  border-radius: 4px;
+  background-color: rgb(250, 235, 215) white;
 }
 
 .dateInputContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+}
+
+.entryHeading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.entryDate {
+  text-wrap: nowrap;
 }

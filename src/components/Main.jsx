@@ -21,7 +21,7 @@ function Main() {
       school: "The Odin Project",
       title: "Full-Stack Web Development",
       start: "Jan 2025",
-      end: "present",
+      end: "Present",
     },
     {
       id: crypto.randomUUID(),
@@ -46,7 +46,7 @@ function Main() {
       company: "Exists Inc.",
       title: "Manager",
       start: "Oct 2024",
-      end: "present",
+      end: "Present",
       description: "Managing workers that really exist",
     },
   ]);

@@ -1,6 +1,16 @@
+body {
+  background-color: #030512;
+}
+
 h1,
 h2 {
   margin: 0;
+}
+
+h3 {
+  margin: 0;
+  font-size: medium;
+  font-weight: bold;
 }
 
 p {

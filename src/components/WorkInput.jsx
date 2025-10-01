@@ -173,6 +173,14 @@ function handleJobDescriptionChange(
 function WorkEntryInput(entry, work, onWorkChange) {
   return (
     <div className="entryInputContainer" key={entry.id}>
+      <div className="entryHeading">
+        <h3>
+          {entry.title}, {entry.company}
+        </h3>
+        <h3>
+          {entry.start} - {entry.end}
+        </h3>
+      </div>
       <CompanyInput entry={entry} work={work} onWorkChange={onWorkChange} />
       <JobTitleInput entry={entry} work={work} onWorkChange={onWorkChange} />
       <div className="inputContainer">

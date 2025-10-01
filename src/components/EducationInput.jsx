@@ -171,6 +171,14 @@ function handleStudyEndChange(
 function EducationEntryInput(entry, education, onEducationChange) {
   return (
     <div className="entryInputContainer" key={entry.id}>
+      <div className="entryHeading">
+        <h3 className="entryTitle">
+          {entry.title}, {entry.school}
+        </h3>
+        <h3 className="entryDate">
+          {entry.start} - {entry.end}
+        </h3>
+      </div>
       <SchoolInput
         entry={entry}
         education={education}

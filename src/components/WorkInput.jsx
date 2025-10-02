@@ -170,6 +170,25 @@ function handleJobDescriptionChange(
   onWorkChange(newWork);
 }
 
+function toggleContainerDisplay(target) {
+  let form = target.nextElementSibling;
+
+  if (target.tagName !== "BUTTON") {
+    form = target.parentNode;
+    form = form.nextElementSibling;
+  }
+
+  if (form.className.includes("show")) {
+    form.classList.remove("show");
+    form.classList.add("hide");
+    return;
+  }
+
+  form.classList.remove("hide");
+  form.classList.add("show");
+  return;
+}
+
 function WorkEntryInput(entry, work, onWorkChange) {
   return (
     <div className="entryInputContainer" key={entry.id}>
@@ -209,7 +228,10 @@ function WorkEntryInput(entry, work, onWorkChange) {
 function WorkInput({ work, onWorkChange }) {
   return (
     <div className="formContainer">
-      <button className="formTitle">
+      <button
+        className="formTitle"
+        onClick={(e) => toggleContainerDisplay(e.target)}
+      >
         <h2>Work Experience</h2>
       </button>
       <form className="inputForm">

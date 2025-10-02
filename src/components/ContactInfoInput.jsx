@@ -74,13 +74,41 @@ function handlePhoneChange(contact, onContactChange, newPhone) {
   onContactChange(newContact);
 }
 
+function toggleContainerDisplay(target) {
+  let arrow = target.lastElementChild;
+  let form = target.nextElementSibling;
+
+  if (target.tagName !== "BUTTON") {
+    arrow = target.parentNode.lastElementChild;
+    form = target.parentNode.nextElementSibling;
+  }
+
+  if (form.className.includes("show")) {
+    arrow.classList.remove("down");
+    arrow.classList.add("up");
+    form.classList.remove("show");
+    form.classList.add("hide");
+    return;
+  }
+
+  arrow.classList.remove("up");
+  arrow.classList.add("down");
+  form.classList.remove("hide");
+  form.classList.add("show");
+  return;
+}
+
 function ContactInfoInput({ contact, onContactChange }) {
   return (
     <div className="formContainer">
-      <button className="formTitle">
+      <button
+        className="formTitle"
+        onClick={(e) => toggleContainerDisplay(e.target)}
+      >
         <h2>Contact Information</h2>
+        <img src="../img/arrow_dropdown.svg" className="arrow" />
       </button>
-      <form className="inputForm">
+      <form className="inputForm show">
         <NameInput contact={contact} onContactChange={onContactChange} />
         <EmailInput contact={contact} onContactChange={onContactChange} />
         <PhoneInput contact={contact} onContactChange={onContactChange} />

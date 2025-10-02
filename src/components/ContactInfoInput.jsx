@@ -84,15 +84,13 @@ function toggleContainerDisplay(target) {
   }
 
   if (form.className.includes("show")) {
-    arrow.classList.remove("down");
-    arrow.classList.add("up");
+    arrow.src = "../img/arrow_dropdown.svg";
     form.classList.remove("show");
     form.classList.add("hide");
     return;
   }
 
-  arrow.classList.remove("up");
-  arrow.classList.add("down");
+  arrow.src = "../img/arrow_dropup.svg";
   form.classList.remove("hide");
   form.classList.add("show");
   return;
@@ -106,7 +104,7 @@ function ContactInfoInput({ contact, onContactChange }) {
         onClick={(e) => toggleContainerDisplay(e.target)}
       >
         <h2>Contact Information</h2>
-        <img src="../img/arrow_dropdown.svg" className="arrow" />
+        <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>
       <form className="inputForm show">
         <NameInput contact={contact} onContactChange={onContactChange} />

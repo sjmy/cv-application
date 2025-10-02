@@ -169,19 +169,22 @@ function handleStudyEndChange(
 }
 
 function toggleContainerDisplay(target) {
+  let arrow = target.lastElementChild;
   let form = target.nextElementSibling;
 
   if (target.tagName !== "BUTTON") {
-    form = target.parentNode;
-    form = form.nextElementSibling;
+    arrow = target.parentNode.lastElementChild;
+    form = target.parentNode.nextElementSibling;
   }
 
   if (form.className.includes("show")) {
+    arrow.src = "../img/arrow_dropdown.svg";
     form.classList.remove("show");
     form.classList.add("hide");
     return;
   }
 
+  arrow.src = "../img/arrow_dropup.svg";
   form.classList.remove("hide");
   form.classList.add("show");
   return;
@@ -232,6 +235,7 @@ function EducationInput({ education, onEducationChange }) {
         onClick={(e) => toggleContainerDisplay(e.target)}
       >
         <h2>Education Experience</h2>
+        <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>
       <form className="inputForm">
         {education.map((entry) =>

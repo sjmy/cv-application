@@ -193,35 +193,41 @@ function toggleContainerDisplay(target) {
 function EducationEntryInput(entry, education, onEducationChange) {
   return (
     <div className="entryInputContainer" key={entry.id}>
-      <div className="entryHeading">
+      <button
+        className="formTitle"
+        onClick={(e) => toggleContainerDisplay(e.target)}
+      >
         <h3 className="entryTitle">
           {entry.title}, {entry.school}
         </h3>
         <h3 className="entryDate">
           {entry.start} - {entry.end}
         </h3>
-      </div>
-      <SchoolInput
-        entry={entry}
-        education={education}
-        onEducationChange={onEducationChange}
-      />
-      <StudyTitleInput
-        entry={entry}
-        education={education}
-        onEducationChange={onEducationChange}
-      />
-      <div className="dateInputContainer">
-        <StudyDateStartInput
+        <img src="../img/arrow_dropup.svg" className="arrow" />
+      </button>
+      <div className="inputForm show">
+        <SchoolInput
           entry={entry}
           education={education}
           onEducationChange={onEducationChange}
         />
-        <StudyDateEndInput
+        <StudyTitleInput
           entry={entry}
           education={education}
           onEducationChange={onEducationChange}
         />
+        <div className="dateInputContainer">
+          <StudyDateStartInput
+            entry={entry}
+            education={education}
+            onEducationChange={onEducationChange}
+          />
+          <StudyDateEndInput
+            entry={entry}
+            education={education}
+            onEducationChange={onEducationChange}
+          />
+        </div>
       </div>
     </div>
   );
@@ -237,7 +243,7 @@ function EducationInput({ education, onEducationChange }) {
         <h2>Education Experience</h2>
         <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>
-      <form className="inputForm">
+      <form className="inputForm show">
         {education.map((entry) =>
           EducationEntryInput(entry, education, onEducationChange)
         )}

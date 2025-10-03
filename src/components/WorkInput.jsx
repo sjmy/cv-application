@@ -195,34 +195,40 @@ function toggleContainerDisplay(target) {
 function WorkEntryInput(entry, work, onWorkChange) {
   return (
     <div className="entryInputContainer" key={entry.id}>
-      <div className="entryHeading">
-        <h3>
+      <button
+        className="formTitle"
+        onClick={(e) => toggleContainerDisplay(e.target)}
+      >
+        <h3 className="entryTitle">
           {entry.title}, {entry.company}
         </h3>
-        <h3>
+        <h3 className="entryDate">
           {entry.start} - {entry.end}
         </h3>
-      </div>
-      <CompanyInput entry={entry} work={work} onWorkChange={onWorkChange} />
-      <JobTitleInput entry={entry} work={work} onWorkChange={onWorkChange} />
-      <div className="inputContainer">
-        <JobDateStartInput
-          entry={entry}
-          work={work}
-          onWorkChange={onWorkChange}
-        />
-        <JobDateEndInput
-          entry={entry}
-          work={work}
-          onWorkChange={onWorkChange}
-        />
-      </div>
-      <div className="inputContainer">
-        <JobDescriptionInput
-          entry={entry}
-          work={work}
-          onWorkChange={onWorkChange}
-        />
+        <img src="../img/arrow_dropup.svg" className="arrow" />
+      </button>
+      <div className="inputForm show">
+        <CompanyInput entry={entry} work={work} onWorkChange={onWorkChange} />
+        <JobTitleInput entry={entry} work={work} onWorkChange={onWorkChange} />
+        <div className="inputContainer">
+          <JobDateStartInput
+            entry={entry}
+            work={work}
+            onWorkChange={onWorkChange}
+          />
+          <JobDateEndInput
+            entry={entry}
+            work={work}
+            onWorkChange={onWorkChange}
+          />
+        </div>
+        <div className="inputContainer">
+          <JobDescriptionInput
+            entry={entry}
+            work={work}
+            onWorkChange={onWorkChange}
+          />
+        </div>
       </div>
     </div>
   );
@@ -238,7 +244,7 @@ function WorkInput({ work, onWorkChange }) {
         <h2>Work Experience</h2>
         <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>
-      <form className="inputForm">
+      <form className="inputForm show">
         {work.map((entry) => WorkEntryInput(entry, work, onWorkChange))}
       </form>
     </div>

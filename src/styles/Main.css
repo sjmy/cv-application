@@ -1,4 +1,4 @@
-@keyframes up {
+/* @keyframes up {
   from {
     transform: rotate(0deg);
   }
@@ -14,7 +14,7 @@
   to {
     transform: rotate(0deg);
   }
-}
+} */
 
 main {
   padding: 10px;
@@ -52,6 +52,7 @@ main {
 .formTitle {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: inherit;
   background-color: inherit;
   border: none;
@@ -88,7 +89,7 @@ input:hover {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 .inputLabel {
@@ -127,7 +128,11 @@ input:hover {
   display: none;
 }
 
-.up {
+.arrow {
+  height: fit-content;
+}
+
+/* .up {
   animation-name: up;
   animation-duration: 100ms;
 }
@@ -135,4 +140,4 @@ input:hover {
 .down {
   animation-name: down;
   animation-duration: 100ms;
-}
+} */

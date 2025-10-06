@@ -243,11 +243,11 @@ function EducationInput({ education, onEducationChange }) {
         <h2>Education Experience</h2>
         <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>
-      <form className="inputForm show">
+      <div className="inputForm show">
         {education.map((entry) =>
           EducationEntryInput(entry, education, onEducationChange)
         )}
-      </form>
+      </div>
     </div>
   );
 }

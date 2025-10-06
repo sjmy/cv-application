@@ -244,9 +244,9 @@ function WorkInput({ work, onWorkChange }) {
         <h2>Work Experience</h2>
         <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>
-      <form className="inputForm show">
+      <div className="inputForm show">
         {work.map((entry) => WorkEntryInput(entry, work, onWorkChange))}
-      </form>
+      </div>
     </div>
   );
 }

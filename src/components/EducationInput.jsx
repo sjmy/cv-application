@@ -93,7 +93,7 @@ function StudyDateStartInput({ entry, education, onEducationChange }) {
           type="date"
           value={entry.start}
           placeholder="Start date of study"
-          id="studyStartDate"
+          id="date"
           autoComplete="off"
           onChange={(e) =>
             handleStudyStartChange(
@@ -135,7 +135,7 @@ function StudyDateEndInput({ entry, education, onEducationChange }) {
           type="date"
           value={entry.end}
           placeholder="End date of study"
-          id="studyEndDate"
+          id="date"
           autoComplete="off"
           onChange={(e) =>
             handleStudyEndChange(
@@ -216,7 +216,7 @@ function EducationEntryInput(entry, education, onEducationChange) {
           education={education}
           onEducationChange={onEducationChange}
         />
-        <div className="dateInputContainer">
+        <div className="inputContainer">
           <StudyDateStartInput
             entry={entry}
             education={education}

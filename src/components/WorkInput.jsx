@@ -73,7 +73,7 @@ function JobDateStartInput({ entry, work, onWorkChange }) {
           type="date"
           value={entry.start}
           placeholder="Start date of job"
-          id="jobStartDate"
+          id="date"
           autoComplete="off"
           onChange={(e) =>
             handleJobStartChange(entry, work, onWorkChange, e.target.value)
@@ -105,7 +105,7 @@ function JobDateEndInput({ entry, work, onWorkChange }) {
           type="date"
           value={entry.end}
           placeholder="End date of job"
-          id="jobEndDate"
+          id="date"
           autoComplete="off"
           onChange={(e) =>
             handleJobEndChange(entry, work, onWorkChange, e.target.value)
@@ -133,11 +133,11 @@ function JobDescriptionInput({ entry, work, onWorkChange }) {
     <>
       <label className="inputLabel">
         Description:
-        <input
+        <textarea
           type="text"
           value={entry.description}
           placeholder="Description of job and duties performed"
-          id="jobDescription"
+          id="description"
           autoComplete="off"
           onChange={(e) =>
             handleJobDescriptionChange(

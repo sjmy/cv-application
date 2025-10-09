@@ -44,6 +44,7 @@ main {
 }
 
 .formContainer {
+  min-width: fit-content;
   border: 2px solid #505e79;
   border-radius: 4px;
   padding: 10px;
@@ -73,7 +74,9 @@ main {
   padding-right: 5px;
 }
 
-input {
+input,
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
   color: #fffcf8ff;
   background-color: #20304a;
   padding: 4px;
@@ -88,8 +91,13 @@ input:hover {
 .inputForm {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 15px;
   padding-top: 10px;
+}
+
+.inputContainer {
+  display: grid;
+  gap: 10px;
 }
 
 .inputLabel {
@@ -97,18 +105,19 @@ input:hover {
   flex-direction: column;
 }
 
+#date {
+  width: 50%;
+}
+
+#description {
+  min-height: 100px;
+}
+
 .entryInputContainer {
   display: grid;
-  gap: 15px;
   padding: 10px;
   border: 1px solid #505e79;
   border-radius: 4px;
-}
-
-.dateInputContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
 }
 
 .entryHeading {

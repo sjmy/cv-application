@@ -227,18 +227,22 @@ function EducationEntryInput(entry, education, onEducationChange) {
             education={education}
             onEducationChange={onEducationChange}
           />
-          <StudyDateEndInput
-            entry={entry}
-            education={education}
-            onEducationChange={onEducationChange}
-          />
+          <div className="inputFooter">
+            <StudyDateEndInput
+              entry={entry}
+              education={education}
+              onEducationChange={onEducationChange}
+            />
+            <img
+              src="../img/delete.svg"
+              className="trash"
+              onClick={() =>
+                deleteEntry(entry.id, education, onEducationChange)
+              }
+            />
+          </div>
         </div>
       </div>
-      <img
-        src="../img/delete.svg"
-        className="trash"
-        onClick={() => deleteEntry(entry.id, education, onEducationChange)}
-      />
     </div>
   );
 }

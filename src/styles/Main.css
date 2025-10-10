@@ -106,7 +106,7 @@ input:hover {
 }
 
 #date {
-  width: 50%;
+  width: 20vw;
 }
 
 #description {
@@ -129,6 +129,11 @@ input:hover {
   text-wrap: nowrap;
 }
 
+.inputFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
 .inputForm.show {
   display: grid;
 }
@@ -143,7 +148,7 @@ input:hover {
 
 .trash {
   justify-self: end;
-  padding-top: 10px;
+  align-self: flex-end;
 }
 
 /* .up {

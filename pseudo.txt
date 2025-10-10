@@ -99,7 +99,7 @@ TODO:
     - add entries for education and work
     - delete entries for education and work DONE
       - confirm delete dialog
-    - show/hide sections
+    - show/hide sections DONE
     - justification
     - font size
     - font colour

@@ -216,30 +216,32 @@ function WorkEntryInput(entry, work, onWorkChange) {
         <CompanyInput entry={entry} work={work} onWorkChange={onWorkChange} />
         <JobTitleInput entry={entry} work={work} onWorkChange={onWorkChange} />
         <div className="inputContainer">
-          <JobDateStartInput
-            entry={entry}
-            work={work}
-            onWorkChange={onWorkChange}
-          />
-          <JobDateEndInput
-            entry={entry}
-            work={work}
-            onWorkChange={onWorkChange}
-          />
-        </div>
-        <div className="inputContainer">
           <JobDescriptionInput
             entry={entry}
             work={work}
             onWorkChange={onWorkChange}
           />
         </div>
+        <div className="inputContainer">
+          <JobDateStartInput
+            entry={entry}
+            work={work}
+            onWorkChange={onWorkChange}
+          />
+          <div className="inputFooter">
+            <JobDateEndInput
+              entry={entry}
+              work={work}
+              onWorkChange={onWorkChange}
+            />
+            <img
+              src="../img/delete.svg"
+              className="trash"
+              onClick={() => deleteEntry(entry.id, work, onWorkChange)}
+            />
+          </div>
+        </div>
       </div>
-      <img
-        src="../img/delete.svg"
-        className="trash"
-        onClick={() => deleteEntry(entry.id, work, onWorkChange)}
-      />
     </div>
   );
 }

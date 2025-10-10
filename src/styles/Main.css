@@ -141,6 +141,11 @@ input:hover {
   height: fit-content;
 }
 
+.trash {
+  justify-self: end;
+  padding-top: 10px;
+}
+
 /* .up {
   animation-name: up;
   animation-duration: 100ms;

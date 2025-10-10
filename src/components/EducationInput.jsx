@@ -190,6 +190,11 @@ function toggleContainerDisplay(target) {
   return;
 }
 
+function deleteEntry(id, education, onEducationChange) {
+  const newEducation = education.filter((entry) => entry.id !== id);
+  onEducationChange(newEducation);
+}
+
 function EducationEntryInput(entry, education, onEducationChange) {
   return (
     <div className="entryInputContainer" key={entry.id}>
@@ -229,6 +234,11 @@ function EducationEntryInput(entry, education, onEducationChange) {
           />
         </div>
       </div>
+      <img
+        src="../img/delete.svg"
+        className="trash"
+        onClick={() => deleteEntry(entry.id, education, onEducationChange)}
+      />
     </div>
   );
 }

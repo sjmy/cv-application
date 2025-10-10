@@ -75,6 +75,7 @@ Colour Palette HEX Codes (dark to light):
 #8e90a7
 #e0d9e0
 #fffcf8ff
+#b12727ff
 
 
 Ideas
@@ -95,7 +96,9 @@ TODO:
     - display formatting, currently getting browser warnings when dates are changed
     - add "Present" option
   - formatting/styling
-    - add/delete entries for education and work
+    - add entries for education and work
+    - delete entries for education and work DONE
+      - confirm delete dialog
     - show/hide sections
     - justification
     - font size

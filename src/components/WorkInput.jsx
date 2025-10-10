@@ -192,6 +192,11 @@ function toggleContainerDisplay(target) {
   return;
 }
 
+function deleteEntry(id, work, onWorkChange) {
+  const newWork = work.filter((entry) => entry.id !== id);
+  onWorkChange(newWork);
+}
+
 function WorkEntryInput(entry, work, onWorkChange) {
   return (
     <div className="entryInputContainer" key={entry.id}>
@@ -230,6 +235,11 @@ function WorkEntryInput(entry, work, onWorkChange) {
           />
         </div>
       </div>
+      <img
+        src="../img/delete.svg"
+        className="trash"
+        onClick={() => deleteEntry(entry.id, work, onWorkChange)}
+      />
     </div>
   );
 }

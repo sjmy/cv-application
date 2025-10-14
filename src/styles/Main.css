@@ -175,10 +175,21 @@ input:hover {
   padding-top: 5px;
 }
 
-button {
+.yesNo {
   background-color: #e0d9e0;
   border: none;
   border-radius: 2px;
+}
+
+.addNewEntry {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: inherit;
+  background-color: inherit;
+  border: none;
+  font-size: inherit;
+  width: fit-content;
 }
 
 /* .up {

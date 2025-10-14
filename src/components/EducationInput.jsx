@@ -207,6 +207,20 @@ function deleteEntry(id, education, onEducationChange) {
   onEducationChange(newEducation);
 }
 
+function addNewEntry(education, onEducationChange) {
+  let newEducation = education.map((entry) => entry);
+  let newEntry = {
+    id: crypto.randomUUID(),
+    school: "School Name",
+    title: "Title of study",
+    start: "Start date",
+    end: "End date",
+  };
+
+  newEducation.push(newEntry);
+  onEducationChange(newEducation);
+}
+
 function EducationEntryInput(entry, education, onEducationChange) {
   return (
     <div className="entryInputContainer" key={entry.id}>
@@ -254,13 +268,19 @@ function EducationEntryInput(entry, education, onEducationChange) {
               <h4>Delete entry?</h4>
               <div className="options">
                 <button
+                  className="yesNo"
                   onClick={() =>
                     deleteEntry(entry.id, education, onEducationChange)
                   }
                 >
                   Yes
                 </button>
-                <button onClick={(e) => hideDeleteDialog(e.target)}>No</button>
+                <button
+                  className="yesNo"
+                  onClick={(e) => hideDeleteDialog(e.target)}
+                >
+                  No
+                </button>
               </div>
             </div>
           </div>
@@ -284,6 +304,13 @@ function EducationInput({ education, onEducationChange }) {
         {education.map((entry) =>
           EducationEntryInput(entry, education, onEducationChange)
         )}
+        <button
+          className="addNewEntry"
+          onClick={() => addNewEntry(education, onEducationChange)}
+        >
+          <img src="../img/add.svg" />
+          <h4>Add education experience</h4>
+        </button>
       </div>
     </div>
   );

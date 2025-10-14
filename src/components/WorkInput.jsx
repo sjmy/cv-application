@@ -209,6 +209,21 @@ function deleteEntry(id, work, onWorkChange) {
   onWorkChange(newWork);
 }
 
+function addNewEntry(work, onWorkChange) {
+  let newWork = work.map((entry) => entry);
+  let newEntry = {
+    id: crypto.randomUUID(),
+    company: "Company",
+    title: "Title",
+    start: "Start date",
+    end: "End date",
+    description: "Description of position",
+  };
+
+  newWork.push(newEntry);
+  onWorkChange(newWork);
+}
+
 function WorkEntryInput(entry, work, onWorkChange) {
   return (
     <div className="entryInputContainer" key={entry.id}>
@@ -281,6 +296,13 @@ function WorkInput({ work, onWorkChange }) {
       </button>
       <div className="inputForm show">
         {work.map((entry) => WorkEntryInput(entry, work, onWorkChange))}
+        <button
+          className="addNewEntry"
+          onClick={() => addNewEntry(work, onWorkChange)}
+        >
+          <img src="../img/add.svg" />
+          <h4>Add work experience</h4>
+        </button>
       </div>
     </div>
   );

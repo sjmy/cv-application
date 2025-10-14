@@ -192,6 +192,18 @@ function toggleContainerDisplay(target) {
   return;
 }
 
+function showDeleteDialog(target) {
+  const dropdown = target.nextElementSibling;
+  dropdown.classList.remove("hide");
+  dropdown.classList.add("show");
+}
+
+function hideDeleteDialog(target) {
+  const dropdown = target.parentNode.parentNode;
+  dropdown.classList.remove("show");
+  dropdown.classList.add("hide");
+}
+
 function deleteEntry(id, work, onWorkChange) {
   const newWork = work.filter((entry) => entry.id !== id);
   onWorkChange(newWork);
@@ -237,8 +249,19 @@ function WorkEntryInput(entry, work, onWorkChange) {
             <img
               src="../img/delete.svg"
               className="trash"
-              onClick={() => deleteEntry(entry.id, work, onWorkChange)}
+              onClick={(e) => showDeleteDialog(e.target)}
             />
+            <div className="dropdownContent">
+              <h4>Delete entry?</h4>
+              <div className="options">
+                <button
+                  onClick={() => deleteEntry(entry.id, work, onWorkChange)}
+                >
+                  Yes
+                </button>
+                <button onClick={(e) => hideDeleteDialog(e.target)}>No</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

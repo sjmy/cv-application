@@ -98,7 +98,7 @@ TODO:
   - formatting/styling
     - add entries for education and work
     - delete entries for education and work DONE
-      - confirm delete dialog
+      - confirm delete dialog DONE
     - show/hide sections DONE
     - justification
     - font size

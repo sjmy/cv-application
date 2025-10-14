@@ -95,6 +95,10 @@ input:hover {
   padding-top: 10px;
 }
 
+.inputForm.show {
+  display: grid;
+}
+
 .inputContainer {
   display: grid;
   gap: 10px;
@@ -131,11 +135,8 @@ input:hover {
 
 .inputFooter {
   display: flex;
+  position: relative;
   justify-content: space-between;
-}
-
-.inputForm.show {
-  display: grid;
 }
 
 .hide {
@@ -149,6 +150,35 @@ input:hover {
 .trash {
   justify-self: end;
   align-self: flex-end;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #20304a;
+  min-width: max-content;
+  border: solid 1px #505e79;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.dropdownContent.show {
+  display: block;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 5px;
+}
+
+button {
+  background-color: #e0d9e0;
+  border: none;
+  border-radius: 2px;
 }
 
 /* .up {

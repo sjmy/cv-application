@@ -82,6 +82,7 @@ textarea {
   padding: 4px;
   border: 1px solid #505e79;
   border-radius: 4px;
+  resize: vertical;
 }
 
 input:hover {
@@ -113,7 +114,8 @@ input:hover {
   width: 20vw;
 }
 
-#description {
+#description,
+#profile {
   min-height: 100px;
 }
 

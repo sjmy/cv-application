@@ -96,7 +96,7 @@ TODO:
     - display formatting, currently getting browser warnings when dates are changed
     - add "Present" option
   - formatting/styling
-    - add entries for education and work
+    - add entries for education and work DONE
     - delete entries for education and work DONE
       - confirm delete dialog DONE
     - show/hide sections DONE

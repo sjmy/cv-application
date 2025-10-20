@@ -1,30 +1,20 @@
 import "../styles/EducationDisplay.css";
 
-// Mock education experience
-// const education = [
-//   {
-//     id: crypto.randomUUID(),
-//     school: "The Odin Project",
-//     title: "Full-Stack Web Development",
-//     start: "Jan 2025",
-//     end: "present",
-//   },
-//   {
-//     id: crypto.randomUUID(),
-//     school: "Placeholder University",
-//     title: "Bachelor of Computer Science",
-//     start: "Sept 2017",
-//     end: "June 2021",
-//   },
-// ];
-
 function EducationEntryDisplay(entry) {
   return (
     <div className="educationEntryDisplay" key={entry.id}>
       <p>{entry.school}</p>
       <p>{entry.title}</p>
       <p>
-        {entry.start} - {entry.end}
+        {entry.start.toLocaleDateString("en-US", {
+          month: "short",
+          year: "numeric",
+        })}{" "}
+        -{" "}
+        {entry.end.toLocaleDateString("en-US", {
+          month: "short",
+          year: "numeric",
+        })}
       </p>
     </div>
   );

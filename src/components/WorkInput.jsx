@@ -235,7 +235,15 @@ function WorkEntryInput(entry, work, onWorkChange) {
           {entry.title}, {entry.company}
         </h3>
         <h3 className="entryDate">
-          {entry.start} - {entry.end}
+          {entry.start.toLocaleDateString("en-US", {
+            month: "short",
+            year: "numeric",
+          })}{" "}
+          -{" "}
+          {entry.end.toLocaleDateString("en-US", {
+            month: "short",
+            year: "numeric",
+          })}
         </h3>
         <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>

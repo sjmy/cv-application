@@ -222,6 +222,9 @@ function addNewEntry(education, onEducationChange) {
 }
 
 function EducationEntryInput(entry, education, onEducationChange) {
+  // const startTest = new Date(entry.start);
+  // console.log(startTest.toLocaleDateString());
+
   return (
     <div className="entryInputContainer" key={entry.id}>
       <button
@@ -232,7 +235,15 @@ function EducationEntryInput(entry, education, onEducationChange) {
           {entry.title}, {entry.school}
         </h3>
         <h3 className="entryDate">
-          {entry.start} - {entry.end}
+          {entry.start.toLocaleDateString("en-US", {
+            month: "short",
+            year: "numeric",
+          })}{" "}
+          -{" "}
+          {entry.end.toLocaleDateString("en-US", {
+            month: "short",
+            year: "numeric",
+          })}
         </h3>
         <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>

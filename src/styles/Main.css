@@ -87,6 +87,7 @@ textarea {
 
 input:hover {
   background-color: #505e79;
+  cursor: pointer;
 }
 
 .inputForm {
@@ -192,6 +193,11 @@ input:hover {
   border: none;
   font-size: inherit;
   width: fit-content;
+}
+
+.addNewEntry:hover,
+.formTitle:hover {
+  cursor: pointer;
 }
 
 /* .up {

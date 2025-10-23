@@ -9,11 +9,13 @@ function EducationEntryDisplay(entry) {
         {entry.start.toLocaleDateString("en-US", {
           month: "short",
           year: "numeric",
+          timeZone: "UTC",
         })}{" "}
         -{" "}
         {entry.end.toLocaleDateString("en-US", {
           month: "short",
           year: "numeric",
+          timeZone: "UTC",
         })}
       </p>
     </div>

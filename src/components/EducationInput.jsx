@@ -85,13 +85,19 @@ function handleStudyTitleChange(
 }
 
 function StudyDateStartInput({ entry, education, onEducationChange }) {
+  const inputValue = entry.start
+    ? entry.start instanceof Date
+      ? entry.start.toISOString().slice(0, 10)
+      : new Date(entry.start).toISOString().slice(0, 10)
+    : "";
+
   return (
     <>
       <label className="inputLabel">
         Start date:
         <input
           type="date"
-          value={entry.start}
+          value={inputValue}
           placeholder="Start date of study"
           id="date"
           autoComplete="off"
@@ -115,7 +121,11 @@ function handleStudyStartChange(
   onEducationChange,
   newStart
 ) {
-  const newEntry = { ...entryToUpdate, start: newStart };
+  // Checks to see if newStart exists, if so make a date out of it, if not store as an empty string
+  const newEntry = {
+    ...entryToUpdate,
+    start: newStart ? new Date(newStart) : "",
+  };
   const newEducation = education.map((entry) => {
     if (entry.id === newEntry.id) {
       return newEntry;
@@ -127,13 +137,19 @@ function handleStudyStartChange(
 }
 
 function StudyDateEndInput({ entry, education, onEducationChange }) {
+  const inputValue = entry.end
+    ? entry.end instanceof Date
+      ? entry.end.toISOString().slice(0, 10)
+      : new Date(entry.end).toISOString().slice(0, 10)
+    : "";
+
   return (
     <>
       <label className="inputLabel">
         End date:
         <input
           type="date"
-          value={entry.end}
+          value={inputValue}
           placeholder="End date of study"
           id="date"
           autoComplete="off"
@@ -157,7 +173,8 @@ function handleStudyEndChange(
   onEducationChange,
   newEnd
 ) {
-  const newEntry = { ...entryToUpdate, end: newEnd };
+  // Checks to see if newEnd exists, if so make a date out of it, if not store as an empty string
+  const newEntry = { ...entryToUpdate, end: newEnd ? new Date(newEnd) : "" };
   const newEducation = education.map((entry) => {
     if (entry.id === newEntry.id) {
       return newEntry;
@@ -213,8 +230,8 @@ function addNewEntry(education, onEducationChange) {
     id: crypto.randomUUID(),
     school: "School Name",
     title: "Title of study",
-    start: "Start date",
-    end: "End date",
+    start: "",
+    end: "",
   };
 
   newEducation.push(newEntry);
@@ -222,8 +239,8 @@ function addNewEntry(education, onEducationChange) {
 }
 
 function EducationEntryInput(entry, education, onEducationChange) {
-  // const startTest = new Date(entry.start);
-  // console.log(startTest.toLocaleDateString());
+  const startDate = entry.start ? new Date(entry.start) : null;
+  const endDate = entry.end ? new Date(entry.end) : null;
 
   return (
     <div className="entryInputContainer" key={entry.id}>
@@ -235,15 +252,21 @@ function EducationEntryInput(entry, education, onEducationChange) {
           {entry.title}, {entry.school}
         </h3>
         <h3 className="entryDate">
-          {entry.start.toLocaleDateString("en-US", {
-            month: "short",
-            year: "numeric",
-          })}{" "}
+          {startDate
+            ? startDate.toLocaleDateString("en-US", {
+                month: "short",
+                year: "numeric",
+                timeZone: "UTC",
+              })
+            : "—"}{" "}
           -{" "}
-          {entry.end.toLocaleDateString("en-US", {
-            month: "short",
-            year: "numeric",
-          })}
+          {endDate
+            ? endDate.toLocaleDateString("en-US", {
+                month: "short",
+                year: "numeric",
+                timeZone: "UTC",
+              })
+            : "—"}
         </h3>
         <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>

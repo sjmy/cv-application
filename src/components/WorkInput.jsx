@@ -65,13 +65,19 @@ function handleJobTitleChange(entryToUpdate, work, onWorkChange, newTitle) {
 }
 
 function JobDateStartInput({ entry, work, onWorkChange }) {
+  const inputValue = entry.start
+    ? entry.start instanceof Date
+      ? entry.start.toISOString().slice(0, 10)
+      : new Date(entry.start).toISOString().slice(0, 10)
+    : "";
+
   return (
     <>
       <label className="inputLabel">
         Start date:
         <input
           type="date"
-          value={entry.start}
+          value={inputValue}
           placeholder="Start date of job"
           id="date"
           autoComplete="off"
@@ -85,7 +91,11 @@ function JobDateStartInput({ entry, work, onWorkChange }) {
 }
 
 function handleJobStartChange(entryToUpdate, work, onWorkChange, newStart) {
-  const newEntry = { ...entryToUpdate, start: newStart };
+  // Checks to see if newStart exists, if so make a date out of it, if not store as an empty string
+  const newEntry = {
+    ...entryToUpdate,
+    start: newStart ? new Date(newStart) : "",
+  };
   const newWork = work.map((entry) => {
     if (entry.id === newEntry.id) {
       return newEntry;
@@ -97,13 +107,19 @@ function handleJobStartChange(entryToUpdate, work, onWorkChange, newStart) {
 }
 
 function JobDateEndInput({ entry, work, onWorkChange }) {
+  const inputValue = entry.end
+    ? entry.end instanceof Date
+      ? entry.end.toISOString().slice(0, 10)
+      : new Date(entry.end).toISOString().slice(0, 10)
+    : "";
+
   return (
     <>
       <label className="inputLabel">
         End date:
         <input
           type="date"
-          value={entry.end}
+          value={inputValue}
           placeholder="End date of job"
           id="date"
           autoComplete="off"
@@ -117,7 +133,8 @@ function JobDateEndInput({ entry, work, onWorkChange }) {
 }
 
 function handleJobEndChange(entryToUpdate, work, onWorkChange, newEnd) {
-  const newEntry = { ...entryToUpdate, end: newEnd };
+  // Checks to see if newEnd exists, if so make a date out of it, if not store as an empty string
+  const newEntry = { ...entryToUpdate, end: newEnd ? new Date(newEnd) : "" };
   const newWork = work.map((entry) => {
     if (entry.id === newEntry.id) {
       return newEntry;
@@ -215,8 +232,8 @@ function addNewEntry(work, onWorkChange) {
     id: crypto.randomUUID(),
     company: "Company",
     title: "Title",
-    start: "Start date",
-    end: "End date",
+    start: "",
+    end: "",
     description: "Description of position",
   };
 
@@ -225,6 +242,17 @@ function addNewEntry(work, onWorkChange) {
 }
 
 function WorkEntryInput(entry, work, onWorkChange) {
+  const startDate = entry.start
+    ? entry.start instanceof Date
+      ? entry.start
+      : new Date(entry.start)
+    : null;
+  const endDate = entry.end
+    ? entry.end instanceof Date
+      ? entry.end
+      : new Date(entry.end)
+    : null;
+
   return (
     <div className="entryInputContainer" key={entry.id}>
       <button
@@ -235,15 +263,21 @@ function WorkEntryInput(entry, work, onWorkChange) {
           {entry.title}, {entry.company}
         </h3>
         <h3 className="entryDate">
-          {entry.start.toLocaleDateString("en-US", {
-            month: "short",
-            year: "numeric",
-          })}{" "}
+          {startDate
+            ? startDate.toLocaleDateString("en-US", {
+                month: "short",
+                year: "numeric",
+                timeZone: "UTC",
+              })
+            : "—"}{" "}
           -{" "}
-          {entry.end.toLocaleDateString("en-US", {
-            month: "short",
-            year: "numeric",
-          })}
+          {endDate
+            ? endDate.toLocaleDateString("en-US", {
+                month: "short",
+                year: "numeric",
+                timeZone: "UTC",
+              })
+            : "—"}
         </h3>
         <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>

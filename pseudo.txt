@@ -93,7 +93,7 @@ Ideas
 
 TODO:
   - dates
-    - display formatting, currently getting browser warnings when dates are changed
+    - display formatting, currently getting browser warnings when dates are changed DONE
     - add "Present" option
   - formatting/styling
     - add entries for education and work DONE

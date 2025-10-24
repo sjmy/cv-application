@@ -92,9 +92,9 @@ Ideas
 
 
 TODO:
-  - dates
+  - dates DONE
     - display formatting, currently getting browser warnings when dates are changed DONE
-    - add "Present" option
+    - add "Present" option DONE ("Present" displays automatically when entry endDate is current month and year)
   - formatting/styling
     - add entries for education and work DONE
     - delete entries for education and work DONE

@@ -85,6 +85,7 @@ function handleStudyTitleChange(
 }
 
 function StudyDateStartInput({ entry, education, onEducationChange }) {
+  // Convert date to a string "dd/mm/yyyy" for display in input type="date" element
   const inputValue = entry.start
     ? entry.start instanceof Date
       ? entry.start.toISOString().slice(0, 10)
@@ -137,6 +138,7 @@ function handleStudyStartChange(
 }
 
 function StudyDateEndInput({ entry, education, onEducationChange }) {
+  // Convert date to a string "dd/mm/yyyy" for display in input type="date" element
   const inputValue = entry.end
     ? entry.end instanceof Date
       ? entry.end.toISOString().slice(0, 10)
@@ -238,6 +240,27 @@ function addNewEntry(education, onEducationChange) {
   onEducationChange(newEducation);
 }
 
+// If the endDate month and year is current, return "Present"
+function endDateDisplay(endDate) {
+  let today = new Date().toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+
+  let end = endDate.toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+
+  if (today === end) {
+    return "Present";
+  }
+
+  return end;
+}
+
 function EducationEntryInput(entry, education, onEducationChange) {
   const startDate = entry.start ? new Date(entry.start) : null;
   const endDate = entry.end ? new Date(entry.end) : null;
@@ -259,14 +282,7 @@ function EducationEntryInput(entry, education, onEducationChange) {
                 timeZone: "UTC",
               })
             : "—"}{" "}
-          -{" "}
-          {endDate
-            ? endDate.toLocaleDateString("en-US", {
-                month: "short",
-                year: "numeric",
-                timeZone: "UTC",
-              })
-            : "—"}
+          - {endDate ? endDateDisplay(endDate) : "—"}
         </h3>
         <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>
@@ -293,6 +309,10 @@ function EducationEntryInput(entry, education, onEducationChange) {
               education={education}
               onEducationChange={onEducationChange}
             />
+            {/* <label className="present">
+              <input type="checkbox" />
+              Present
+            </label> */}
             <img
               src="../img/delete.svg"
               className="trash"

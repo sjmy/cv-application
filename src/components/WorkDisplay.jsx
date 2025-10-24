@@ -1,5 +1,26 @@
 import "../styles/WorkDisplay.css";
 
+// If the endDate month and year is current, return "Present"
+function endDateDisplay(endDate) {
+  let today = new Date().toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+
+  let end = endDate.toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+
+  if (today === end) {
+    return "Present";
+  }
+
+  return end;
+}
+
 function WorkEntryDisplay(entry) {
   const startDate = entry.start
     ? entry.start instanceof Date
@@ -24,14 +45,7 @@ function WorkEntryDisplay(entry) {
               timeZone: "UTC",
             })
           : "—"}{" "}
-        -{" "}
-        {endDate
-          ? endDate.toLocaleDateString("en-US", {
-              month: "short",
-              year: "numeric",
-              timeZone: "UTC",
-            })
-          : "—"}
+        - {endDate ? endDateDisplay(endDate) : "—"}
       </p>
       <p>{entry.description}</p>
     </div>

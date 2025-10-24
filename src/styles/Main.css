@@ -111,6 +111,13 @@ input:hover {
   flex-direction: column;
 }
 
+.present {
+  display: flex;
+  align-self: flex-end;
+  gap: 5px;
+  padding-left: 10px;
+}
+
 #date {
   width: 20vw;
 }
@@ -139,7 +146,7 @@ input:hover {
 .inputFooter {
   display: flex;
   position: relative;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .hide {
@@ -153,6 +160,7 @@ input:hover {
 .trash {
   justify-self: end;
   align-self: flex-end;
+  margin-left: auto;
 }
 
 .dropdownContent {

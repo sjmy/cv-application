@@ -65,6 +65,7 @@ function handleJobTitleChange(entryToUpdate, work, onWorkChange, newTitle) {
 }
 
 function JobDateStartInput({ entry, work, onWorkChange }) {
+  // Convert date to a string "dd/mm/yyyy" for display in input type="date" element
   const inputValue = entry.start
     ? entry.start instanceof Date
       ? entry.start.toISOString().slice(0, 10)
@@ -107,6 +108,7 @@ function handleJobStartChange(entryToUpdate, work, onWorkChange, newStart) {
 }
 
 function JobDateEndInput({ entry, work, onWorkChange }) {
+  // Convert date to a string "dd/mm/yyyy" for display in input type="date" element
   const inputValue = entry.end
     ? entry.end instanceof Date
       ? entry.end.toISOString().slice(0, 10)
@@ -241,6 +243,27 @@ function addNewEntry(work, onWorkChange) {
   onWorkChange(newWork);
 }
 
+// If the endDate month and year is current, return "Present"
+function endDateDisplay(endDate) {
+  let today = new Date().toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+
+  let end = endDate.toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+
+  if (today === end) {
+    return "Present";
+  }
+
+  return end;
+}
+
 function WorkEntryInput(entry, work, onWorkChange) {
   const startDate = entry.start
     ? entry.start instanceof Date
@@ -270,14 +293,7 @@ function WorkEntryInput(entry, work, onWorkChange) {
                 timeZone: "UTC",
               })
             : "—"}{" "}
-          -{" "}
-          {endDate
-            ? endDate.toLocaleDateString("en-US", {
-                month: "short",
-                year: "numeric",
-                timeZone: "UTC",
-              })
-            : "—"}
+          - {endDate ? endDateDisplay(endDate) : "—"}
         </h3>
         <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>

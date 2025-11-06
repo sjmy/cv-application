@@ -1,5 +1,3 @@
-import "../styles/EducationInput.css";
-
 function SchoolInput({ entry, education, onEducationChange }) {
   return (
     <div className="inputContainer">

@@ -1,5 +1,3 @@
-import "../styles/ContactInfoInput.css";
-
 function NameInput({ contact, onContactChange }) {
   return (
     <div className="inputContainer">

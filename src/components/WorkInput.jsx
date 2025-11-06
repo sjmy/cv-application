@@ -1,5 +1,3 @@
-import "../styles/WorkInput.css";
-
 function CompanyInput({ entry, work, onWorkChange }) {
   return (
     <div className="inputContainer">

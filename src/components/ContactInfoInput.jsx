@@ -23,6 +23,31 @@ function handleNameChange(contact, onContactChange, newName) {
   onContactChange(newContact);
 }
 
+function TitleInput({ contact, onContactChange }) {
+  return (
+    <div className="inputContainer">
+      <label className="inputLabel">
+        Title:
+        <input
+          type="text"
+          value={contact.title}
+          placeholder="Title"
+          id="name"
+          autoComplete="off"
+          onChange={(e) =>
+            handleTitleChange(contact, onContactChange, e.target.value)
+          }
+        />
+      </label>
+    </div>
+  );
+}
+
+function handleTitleChange(contact, onContactChange, newTitle) {
+  const newContact = { ...contact, title: newTitle };
+  onContactChange(newContact);
+}
+
 function EmailInput({ contact, onContactChange }) {
   return (
     <div className="inputContainer">
@@ -94,6 +119,56 @@ function toggleContainerDisplay(target) {
   return;
 }
 
+function LocationInput({ contact, onContactChange }) {
+  return (
+    <div className="inputContainer">
+      <label className="inputLabel">
+        Location:
+        <input
+          type="text"
+          value={contact.location}
+          placeholder="Location"
+          id="name"
+          autoComplete="off"
+          onChange={(e) =>
+            handleLocationChange(contact, onContactChange, e.target.value)
+          }
+        />
+      </label>
+    </div>
+  );
+}
+
+function handleLocationChange(contact, onContactChange, newLocation) {
+  const newContact = { ...contact, location: newLocation };
+  onContactChange(newContact);
+}
+
+function GithubInput({ contact, onContactChange }) {
+  return (
+    <div className="inputContainer">
+      <label className="inputLabel">
+        Github:
+        <input
+          type="text"
+          value={contact.github}
+          placeholder="Github"
+          id="name"
+          autoComplete="off"
+          onChange={(e) =>
+            handleGithubChange(contact, onContactChange, e.target.value)
+          }
+        />
+      </label>
+    </div>
+  );
+}
+
+function handleGithubChange(contact, onContactChange, newGithub) {
+  const newContact = { ...contact, github: newGithub };
+  onContactChange(newContact);
+}
+
 function ContactInfoInput({ contact, onContactChange }) {
   return (
     <div className="formContainer">
@@ -106,8 +181,11 @@ function ContactInfoInput({ contact, onContactChange }) {
       </button>
       <form className="inputForm show">
         <NameInput contact={contact} onContactChange={onContactChange} />
+        <TitleInput contact={contact} onContactChange={onContactChange} />
         <EmailInput contact={contact} onContactChange={onContactChange} />
         <PhoneInput contact={contact} onContactChange={onContactChange} />
+        <LocationInput contact={contact} onContactChange={onContactChange} />
+        <GithubInput contact={contact} onContactChange={onContactChange} />
       </form>
     </div>
   );

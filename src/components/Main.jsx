@@ -13,8 +13,11 @@ function Main() {
   const [contact, setContact] = useState({
     id: crypto.randomUUID(),
     name: "Sleve McDichael",
+    title: "Software Developer",
     email: "smcdich@proton.me",
     phone: "555-5555",
+    location: "Vancouver, BC",
+    github: "github.com/sjmy",
   });
 
   const [profile, setProfile] = useState(

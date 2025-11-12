@@ -87,7 +87,7 @@ textarea {
 
 input:hover {
   background-color: #505e79;
-  cursor: pointer;
+  cursor: text;
 }
 
 .inputForm {

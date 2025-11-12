@@ -7,3 +7,22 @@
   font-size: 2.5vw;
   font-weight: bold;
 }
+
+.displayTitle {
+  justify-self: right;
+  font-size: 1.3vw;
+}
+
+.displayContact {
+  display: grid;
+  gap: 3px;
+}
+
+.entry {
+  display: flex;
+}
+
+.logo {
+  height: 1vw;
+  padding-right: 5px;
+}

@@ -1,5 +1,12 @@
-.contactInfoDisplayContainer {
+.nameTitleDisplayContainer {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
   margin-bottom: 10px;
+}
+
+.sidebarDisplayContainer {
+  grid-column: 1 / 2;
+  grid-row: 2 / 11;
 }
 
 .displayName {

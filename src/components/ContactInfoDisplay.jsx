@@ -50,16 +50,20 @@ function DisplayGithub({ github }) {
 
 function ContactInfoDisplay({ contact }) {
   return (
-    <section className="contactInfoDisplayContainer">
-      <p className="displayName">{contact.name}</p>
-      <p className="displayTitle">{contact.title}</p>
-      <div className="displayContact">
-        <DisplayEmail email={contact.email} />
-        <DisplayPhone phone={contact.phone} />
-        <DisplayLocation location={contact.location} />
-        <DisplayGithub github={contact.github} />
-      </div>
-    </section>
+    <>
+      <section className="nameTitleDisplayContainer">
+        <p className="displayName">{contact.name}</p>
+        <p className="displayTitle">{contact.title}</p>
+      </section>
+      <section className="sidebarDisplayContainer">
+        <div className="displayContact">
+          <DisplayEmail email={contact.email} />
+          <DisplayPhone phone={contact.phone} />
+          <DisplayLocation location={contact.location} />
+          <DisplayGithub github={contact.github} />
+        </div>
+      </section>
+    </>
   );
 }
 

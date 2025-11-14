@@ -347,7 +347,7 @@ function WorkInput({ work, onWorkChange }) {
         className="formTitle"
         onClick={(e) => toggleContainerDisplay(e.target)}
       >
-        <h2>Work Experience</h2>
+        <h2>Experience</h2>
         <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>
       <div className="inputForm show">
@@ -357,7 +357,7 @@ function WorkInput({ work, onWorkChange }) {
           onClick={() => addNewEntry(work, onWorkChange)}
         >
           <img src="../img/add.svg" />
-          <h4>Add work experience</h4>
+          <h4>Add experience</h4>
         </button>
       </div>
     </div>

@@ -34,7 +34,9 @@ function EducationEntryDisplay(entry) {
     : null;
   return (
     <div className="educationEntryDisplay" key={entry.id}>
-      <p>{entry.school}</p>
+      <p>
+        <b>{entry.school}</b>
+      </p>
       <p>{entry.title}</p>
       <p>
         {startDate
@@ -53,7 +55,7 @@ function EducationEntryDisplay(entry) {
 function EducationDisplay({ education }) {
   return (
     <section className="educationDisplayContainer">
-      <h2>Education Experience</h2>
+      <h2>Education</h2>
       {education.map((entry) => EducationEntryDisplay(entry))}
     </section>
   );

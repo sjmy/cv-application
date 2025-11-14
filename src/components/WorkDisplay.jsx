@@ -35,7 +35,9 @@ function WorkEntryDisplay(entry) {
 
   return (
     <div className="workEntry" key={entry.id}>
-      <p>{entry.company}</p>
+      <p>
+        <b>{entry.company}</b>
+      </p>
       <p>{entry.title}</p>
       <p>
         {startDate
@@ -55,7 +57,7 @@ function WorkEntryDisplay(entry) {
 function WorkDisplay({ work }) {
   return (
     <section className="workDisplayContainer">
-      <h2>Work Experience</h2>
+      <h2>Experience</h2>
       {work.map((entry) => WorkEntryDisplay(entry))}
     </section>
   );

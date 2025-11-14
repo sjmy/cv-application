@@ -1,4 +1,32 @@
+/* Make sure printed content fits an A4 page */
+@page {
+  size: A4;
+  margin: 10mm;
+}
+
 @media print {
+  /* hide everything except the display container if you want only that printed */
+  body * {
+    visibility: hidden;
+  }
+
+  .displaySectionContainer,
+  .displaySectionContainer * {
+    visibility: visible;
+  }
+
+  /* force the container to A4 width and remove default margins */
+  .displaySectionContainer {
+    width: 210mm !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    left: 0 !important;
+    top: 0 !important;
+    position: relative !important;
+  }
+
     .pe-no-print {
         display: none !important;
     }

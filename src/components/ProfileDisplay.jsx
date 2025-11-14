@@ -1,4 +1,4 @@
-// import "../styles/ContactInfoDisplay.css";
+import "../styles/ProfileDisplay.css";
 
 function ProfileDisplay({ profile }) {
   return (

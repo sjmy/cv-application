@@ -1,3 +1,7 @@
+.educationDisplayContainer {
+  grid-column: 2 / 4;
+}
+
 .educationEntryDisplay {
   margin-bottom: 10px;
 }

@@ -37,7 +37,9 @@ main {
 
 .displaySectionContainer {
   display: grid;
-  font-size: 0.8vw;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  font-size: 0.68vw;
   aspect-ratio: 8.5 / 11;
   background-color: white;
   padding: 7%;

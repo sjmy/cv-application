@@ -349,7 +349,7 @@ function EducationInput({ education, onEducationChange }) {
         className="formTitle"
         onClick={(e) => toggleContainerDisplay(e.target)}
       >
-        <h2>Education Experience</h2>
+        <h2>Education</h2>
         <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>
       <div className="inputForm show">
@@ -361,7 +361,7 @@ function EducationInput({ education, onEducationChange }) {
           onClick={() => addNewEntry(education, onEducationChange)}
         >
           <img src="../img/add.svg" />
-          <h4>Add education experience</h4>
+          <h4>Add education</h4>
         </button>
       </div>
     </div>

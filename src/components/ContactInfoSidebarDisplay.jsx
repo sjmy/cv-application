@@ -1,4 +1,4 @@
-import "../styles/ContactInfoDisplay.css";
+import "../styles/ContactInfoSidebarDisplay.css";
 
 function DisplayEmail({ email }) {
   if (email === "") {
@@ -48,7 +48,22 @@ function DisplayGithub({ github }) {
   );
 }
 
-function ContactInfoDisplay({ contact }) {
+function ExtraEntryDisplay(entry) {
+  return (
+    <div className="extraEntryDisplay" key={entry.id}>
+      <p>
+        <b>{entry.title}</b>
+      </p>
+      <p>
+        {entry.items.map((item) => (
+          <li>{item}</li>
+        ))}
+      </p>
+    </div>
+  );
+}
+
+function ContactInfoSidebarDisplay({ contact, extra }) {
   return (
     <>
       <section className="nameTitleDisplayContainer">
@@ -62,9 +77,10 @@ function ContactInfoDisplay({ contact }) {
           <DisplayLocation location={contact.location} />
           <DisplayGithub github={contact.github} />
         </div>
+        {extra.map((entry) => ExtraEntryDisplay(entry))}
       </section>
     </>
   );
 }
 
-export default ContactInfoDisplay;
+export default ContactInfoSidebarDisplay;

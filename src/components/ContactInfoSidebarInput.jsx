@@ -169,7 +169,19 @@ function handleGithubChange(contact, onContactChange, newGithub) {
   onContactChange(newContact);
 }
 
-function ContactInfoInput({ contact, onContactChange }) {
+// I don't think it makes sense to have the Extra Section here. It should be in its own box after education and work.
+// In Main.jsx, add a new inputSection after WorkInput for Extra Sections
+// It can still display in ContactInfoSideBarDisplay (but maybe I should change that too)
+function ExtraEntryInput(entry, onExtraChange) {
+  return <>{entry.title}</>;
+}
+
+function ContactInfoSidebarInput({
+  contact,
+  onContactChange,
+  extra,
+  onExtraChange,
+}) {
   return (
     <div className="formContainer">
       <button
@@ -187,8 +199,9 @@ function ContactInfoInput({ contact, onContactChange }) {
         <LocationInput contact={contact} onContactChange={onContactChange} />
         <GithubInput contact={contact} onContactChange={onContactChange} />
       </form>
+      {extra.map((entry) => ExtraEntryInput(entry, onExtraChange))}
     </div>
   );
 }
 
-export default ContactInfoInput;
+export default ContactInfoSidebarInput;

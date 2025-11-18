@@ -105,6 +105,20 @@ TODO:
     - font colour
   - Add Section functionality
     - title
-    - add heading?
-    - text area
-  - reorder sections functionality?
+      - when title changed, so does the heading in the input and display containers
+    - text area or single field for each item with an "add item" button
+      - end result: every line is a bullet point
+    - what does the state look like for user-created sections?
+      [
+        {
+          id: crypto.randomUUID(),
+          title: "Languages",
+          items: ["Python", "Javascript", "HTML", "CSS"],
+        },
+        {
+          id: crypto.randomUUID(),
+          title: "Software",
+          items: ["Vicon Shogun", "MotionBuilder", "Unreal"],
+        },
+      ]
+      - with this state structure we can change the title, add/remove items, add sections

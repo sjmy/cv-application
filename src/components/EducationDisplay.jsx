@@ -55,7 +55,7 @@ function EducationEntryDisplay(entry) {
 function EducationDisplay({ education }) {
   return (
     <section className="educationDisplayContainer">
-      <h2>Education</h2>
+      <h2 className="educationTitle">Education</h2>
       {education.map((entry) => EducationEntryDisplay(entry))}
     </section>
   );

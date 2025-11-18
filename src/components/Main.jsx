@@ -1,7 +1,7 @@
 import "../styles/Main.css";
 import { useState } from "react";
-import ContactInfoInput from "./ContactInfoInput";
-import ContactInfoDisplay from "./ContactInfoDisplay";
+import ContactInfoSidebarInput from "./ContactInfoSidebarInput";
+import ContactInfoSidebarDisplay from "./ContactInfoSidebarDisplay";
 import ProfileInput from "./ProfileInput";
 import ProfileDisplay from "./ProfileDisplay";
 import EducationInput from "./EducationInput";
@@ -60,10 +60,28 @@ function Main() {
     },
   ]);
 
+  const [extra, setExtra] = useState([
+    {
+      id: crypto.randomUUID(),
+      title: "Languages",
+      items: ["Python", "Javascript", "HTML", "CSS"],
+    },
+    {
+      id: crypto.randomUUID(),
+      title: "Software",
+      items: ["Vicon Shogun", "MotionBuilder", "Unreal"],
+    },
+  ]);
+
   return (
     <main>
       <section className="inputSection">
-        <ContactInfoInput contact={contact} onContactChange={setContact} />
+        <ContactInfoSidebarInput
+          contact={contact}
+          onContactChange={setContact}
+          extra={extra}
+          onExtraChange={setExtra}
+        />
         <ProfileInput profile={profile} onProfileChange={setProfile} />
         <EducationInput
           education={education}
@@ -73,7 +91,7 @@ function Main() {
       </section>
       <section className="displaySection">
         <div className="displaySectionContainer">
-          <ContactInfoDisplay contact={contact} />
+          <ContactInfoSidebarDisplay contact={contact} extra={extra} />
           <ProfileDisplay profile={profile} />
           <EducationDisplay education={education} />
           <WorkDisplay work={work} />

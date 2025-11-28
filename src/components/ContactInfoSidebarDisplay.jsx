@@ -6,7 +6,7 @@ function DisplayEmail({ email }) {
   }
 
   return (
-    <p className="entry">
+    <p className="displayContactEntry">
       <img src="../img/mail.svg" className="logo" /> {email}
     </p>
   );
@@ -18,7 +18,7 @@ function DisplayPhone({ phone }) {
   }
 
   return (
-    <p className="entry">
+    <p className="displayContactEntry">
       <img src="../img/phone.svg" className="logo" /> {phone}
     </p>
   );
@@ -30,7 +30,7 @@ function DisplayLocation({ location }) {
   }
 
   return (
-    <p className="entry">
+    <p className="displayContactEntry">
       <img src="../img/location.svg" className="logo" /> {location}
     </p>
   );
@@ -42,7 +42,7 @@ function DisplayGithub({ github }) {
   }
 
   return (
-    <p className="entry">
+    <p className="displayContactEntry">
       <img src="../img/github.png" className="logo" /> {github}
     </p>
   );
@@ -51,12 +51,14 @@ function DisplayGithub({ github }) {
 function ExtraEntryDisplay(entry) {
   return (
     <div className="extraEntryDisplay" key={entry.id}>
-      <p>
+      <h2>
         <b>{entry.title}</b>
-      </p>
+      </h2>
       <p>
         {entry.items.map((item) => (
-          <li>{item}</li>
+          <li className="listItem" key={item}>
+            {item}
+          </li>
         ))}
       </p>
     </div>

@@ -1,5 +1,6 @@
 .workDisplayContainer {
   grid-column: 2 / 4;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 

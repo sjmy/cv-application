@@ -100,9 +100,10 @@ TODO:
     - delete entries for education and work DONE
       - confirm delete dialog DONE
     - show/hide sections DONE
-    - justification
-    - font size
-    - font colour
+    POTENTIALLY
+      - justification
+      - font size
+      - font colour
   - Add Section functionality
     - title
       - when title changed, so does the heading in the input and display containers

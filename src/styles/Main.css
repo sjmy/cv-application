@@ -210,6 +210,11 @@ input:hover {
   cursor: pointer;
 }
 
+.listItem {
+  list-style: square inside;
+  padding-left: 5px;
+}
+
 /* .up {
   animation-name: up;
   animation-duration: 100ms;

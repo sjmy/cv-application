@@ -1,4 +1,5 @@
 .profileDisplayContainer {
   grid-column: 2 / 4;
   padding-bottom: 15px;
+  border-bottom: 1px dashed black;
 }

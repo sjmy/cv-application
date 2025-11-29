@@ -261,9 +261,10 @@ function hideDeleteDialog(target) {
   dropdown.classList.add("hide");
 }
 
-function deleteEntry(id, education, onEducationChange) {
+function deleteEntry(id, education, onEducationChange, target) {
   const newEducation = education.filter((entry) => entry.id !== id);
   onEducationChange(newEducation);
+  hideDeleteDialog(target);
 }
 
 function addNewEntry(education, onEducationChange) {
@@ -370,8 +371,13 @@ function EducationEntryInput(entry, education, onEducationChange) {
               <div className="options">
                 <button
                   className="yesNo"
-                  onClick={() =>
-                    deleteEntry(entry.id, education, onEducationChange)
+                  onClick={(e) =>
+                    deleteEntry(
+                      entry.id,
+                      education,
+                      onEducationChange,
+                      e.target
+                    )
                   }
                 >
                   Yes

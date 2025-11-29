@@ -55,8 +55,8 @@ function ExtraEntryDisplay(entry) {
         <b>{entry.title}</b>
       </h2>
       <p>
-        {entry.items.map((item) => (
-          <li className="listItem" key={item}>
+        {entry.items.map((item, index) => (
+          <li className="listItem" key={index}>
             {item}
           </li>
         ))}

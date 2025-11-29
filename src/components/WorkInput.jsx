@@ -221,9 +221,10 @@ function hideDeleteDialog(target) {
   dropdown.classList.add("hide");
 }
 
-function deleteEntry(id, work, onWorkChange) {
+function deleteEntry(id, work, onWorkChange, target) {
   const newWork = work.filter((entry) => entry.id !== id);
   onWorkChange(newWork);
+  hideDeleteDialog(target);
 }
 
 function addNewEntry(work, onWorkChange) {
@@ -326,7 +327,9 @@ function WorkEntryInput(entry, work, onWorkChange) {
               <h4>Delete entry?</h4>
               <div className="options">
                 <button
-                  onClick={() => deleteEntry(entry.id, work, onWorkChange)}
+                  onClick={(e) =>
+                    deleteEntry(entry.id, work, onWorkChange, e.target)
+                  }
                 >
                   Yes
                 </button>

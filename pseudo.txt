@@ -107,8 +107,7 @@ TODO:
   - Add Section functionality
     - title
       - when title changed, so does the heading in the input and display containers
-    - text area or single field for each item with an "add item" button
-      - end result: every line is a bullet point
+    - text area or single field for each item with an "add item" button DONE
     - what does the state look like for user-created sections?
       [
         {

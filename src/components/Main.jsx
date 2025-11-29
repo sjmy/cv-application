@@ -1,13 +1,15 @@
 import "../styles/Main.css";
 import { useState } from "react";
-import ContactInfoSidebarInput from "./ContactInfoSidebarInput";
-import ContactInfoSidebarDisplay from "./ContactInfoSidebarDisplay";
+import ContactInfoInput from "./ContactInfoInput";
+import SidebarDisplay from "./SidebarDisplay";
 import ProfileInput from "./ProfileInput";
 import ProfileDisplay from "./ProfileDisplay";
 import EducationInput from "./EducationInput";
 import EducationDisplay from "./EducationDisplay";
 import WorkInput from "./WorkInput";
 import WorkDisplay from "./WorkDisplay";
+import ExtraSectionsInput from "./ExtraSectionsInput";
+// import ExtraDisplay from "./ExtraSectionsDisplay";
 
 function Main() {
   const [contact, setContact] = useState({
@@ -31,6 +33,7 @@ function Main() {
       title: "Full-Stack Web Development",
       start: new Date("2025-01-02"),
       end: new Date(),
+      description: "Javascript, HTML, CSS, React, Test Driven Development",
     },
     {
       id: crypto.randomUUID(),
@@ -38,6 +41,8 @@ function Main() {
       title: "Bachelor of Computer Science",
       start: new Date("2017-09-01"),
       end: new Date("2021-06-01"),
+      description:
+        "A description of the things learned during a four years at Placeholder University.",
     },
   ]);
 
@@ -64,7 +69,7 @@ function Main() {
     {
       id: crypto.randomUUID(),
       title: "Languages",
-      items: ["Python", "Javascript", "HTML", "CSS"],
+      items: ["Python", "Javascript", "HTML", "CSS", "Git"],
     },
     {
       id: crypto.randomUUID(),
@@ -76,25 +81,22 @@ function Main() {
   return (
     <main>
       <section className="inputSection">
-        <ContactInfoSidebarInput
-          contact={contact}
-          onContactChange={setContact}
-          extra={extra}
-          onExtraChange={setExtra}
-        />
+        <ContactInfoInput contact={contact} onContactChange={setContact} />
         <ProfileInput profile={profile} onProfileChange={setProfile} />
         <EducationInput
           education={education}
           onEducationChange={setEducation}
         />
         <WorkInput work={work} onWorkChange={setWork} />
+        <ExtraSectionsInput extra={extra} onExtraChange={setExtra} />
       </section>
       <section className="displaySection">
         <div className="displaySectionContainer">
-          <ContactInfoSidebarDisplay contact={contact} extra={extra} />
+          <SidebarDisplay contact={contact} extra={extra} />
           <ProfileDisplay profile={profile} />
           <EducationDisplay education={education} />
           <WorkDisplay work={work} />
+          {/* <ExtraDisplay extra={extra} /> */}
         </div>
       </section>
     </main>

@@ -35,20 +35,22 @@ function WorkEntryDisplay(entry) {
 
   return (
     <div className="workEntryDisplay" key={entry.id}>
-      <p>
-        <b>{entry.company}</b>
-      </p>
-      <p>{entry.title}</p>
-      <p>
-        {startDate
-          ? startDate.toLocaleDateString("en-US", {
-              month: "short",
-              year: "numeric",
-              timeZone: "UTC",
-            })
-          : "—"}{" "}
-        - {endDate ? endDateDisplay(endDate) : "—"}
-      </p>
+      <div className="workEntryHeading">
+        <p className="workEntryTitle">
+          <b>{entry.title}</b>
+        </p>
+        <p className="workEntryDate">
+          {startDate
+            ? startDate.toLocaleDateString("en-US", {
+                month: "short",
+                year: "numeric",
+                timeZone: "UTC",
+              })
+            : "—"}{" "}
+          - {endDate ? endDateDisplay(endDate) : "—"}
+        </p>
+      </div>
+      <p>{entry.company}</p>
       <p>{entry.description}</p>
     </div>
   );

@@ -185,6 +185,48 @@ function handleStudyEndChange(
   onEducationChange(newEducation);
 }
 
+function EducationDescriptionInput({ entry, education, onEducationChange }) {
+  return (
+    <>
+      <label className="inputLabel">
+        Description:
+        <textarea
+          type="text"
+          value={entry.description}
+          placeholder="Description of job and duties performed"
+          id="description"
+          autoComplete="off"
+          onChange={(e) =>
+            handleEducationDescriptionChange(
+              entry,
+              education,
+              onEducationChange,
+              e.target.value
+            )
+          }
+        />
+      </label>
+    </>
+  );
+}
+
+function handleEducationDescriptionChange(
+  entryToUpdate,
+  education,
+  onEducationChange,
+  newDesc
+) {
+  const newEntry = { ...entryToUpdate, description: newDesc };
+  const newEducation = education.map((entry) => {
+    if (entry.id === newEntry.id) {
+      return newEntry;
+    }
+    return entry;
+  });
+
+  onEducationChange(newEducation);
+}
+
 function toggleContainerDisplay(target) {
   let arrow = target.lastElementChild;
   let form = target.nextElementSibling;
@@ -295,6 +337,13 @@ function EducationEntryInput(entry, education, onEducationChange) {
           education={education}
           onEducationChange={onEducationChange}
         />
+        <div className="inputContainer">
+          <EducationDescriptionInput
+            entry={entry}
+            education={education}
+            onEducationChange={onEducationChange}
+          />
+        </div>
         <div className="inputContainer">
           <StudyDateStartInput
             entry={entry}

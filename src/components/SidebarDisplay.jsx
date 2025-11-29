@@ -1,4 +1,4 @@
-import "../styles/ContactInfoSidebarDisplay.css";
+import "../styles/SidebarDisplay.css";
 
 function DisplayEmail({ email }) {
   if (email === "") {
@@ -65,7 +65,7 @@ function ExtraEntryDisplay(entry) {
   );
 }
 
-function ContactInfoSidebarDisplay({ contact, extra }) {
+function SidebarDisplay({ contact, extra }) {
   return (
     <>
       <section className="nameTitleDisplayContainer">
@@ -85,4 +85,4 @@ function ContactInfoSidebarDisplay({ contact, extra }) {
   );
 }
 
-export default ContactInfoSidebarDisplay;
+export default SidebarDisplay;

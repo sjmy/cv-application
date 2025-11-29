@@ -34,20 +34,23 @@ function EducationEntryDisplay(entry) {
     : null;
   return (
     <div className="educationEntryDisplay" key={entry.id}>
-      <p>
-        <b>{entry.school}</b>
-      </p>
+      <div className="educationEntryHeading">
+        <p className="educationEntryTitle">
+          <b>{entry.school}</b>
+        </p>
+        <p className="educationEntryDate">
+          {startDate
+            ? startDate.toLocaleDateString("en-US", {
+                month: "short",
+                year: "numeric",
+                timeZone: "UTC",
+              })
+            : "—"}{" "}
+          - {endDate ? endDateDisplay(endDate) : "—"}
+        </p>
+      </div>
       <p>{entry.title}</p>
-      <p>
-        {startDate
-          ? startDate.toLocaleDateString("en-US", {
-              month: "short",
-              year: "numeric",
-              timeZone: "UTC",
-            })
-          : "—"}{" "}
-        - {endDate ? endDateDisplay(endDate) : "—"}
-      </p>
+      <p>{entry.description}</p>
     </div>
   );
 }

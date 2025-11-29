@@ -169,20 +169,7 @@ function handleGithubChange(contact, onContactChange, newGithub) {
   onContactChange(newContact);
 }
 
-// I don't think it makes sense to have the Extra Section here. It should be in its own box after education and work.
-// In Main.jsx, add a new inputSection after WorkInput, maybe called Extra Sections or Add Sections (uses the "extra" state)
-// Need to figure out how to change the title of the section and then display it like the rest of the headings in the input section
-// Maybe an edit button that changes the title to an input? and when you press enter or click away it locks in
-function ExtraEntryInput(entry, onExtraChange) {
-  return <p key={entry.id}>{entry.title}</p>;
-}
-
-function ContactInfoSidebarInput({
-  contact,
-  onContactChange,
-  extra,
-  onExtraChange,
-}) {
+function ContactInfoInput({ contact, onContactChange }) {
   return (
     <div className="formContainer">
       <button
@@ -200,9 +187,8 @@ function ContactInfoSidebarInput({
         <LocationInput contact={contact} onContactChange={onContactChange} />
         <GithubInput contact={contact} onContactChange={onContactChange} />
       </form>
-      {extra.map((entry) => ExtraEntryInput(entry, onExtraChange))}
     </div>
   );
 }
 
-export default ContactInfoSidebarInput;
+export default ContactInfoInput;

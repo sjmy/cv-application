@@ -21,6 +21,7 @@ function print() {
   printContent.style.transform = "none";
   printContent.style.transformOrigin = "top left";
   printContent.style.position = "relative";
+  printContent.style.fontSize = "large";
 
   // call existing print helper; cleanup after a short delay to allow print to start
   try {

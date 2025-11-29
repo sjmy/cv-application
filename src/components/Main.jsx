@@ -9,7 +9,6 @@ import EducationDisplay from "./EducationDisplay";
 import WorkInput from "./WorkInput";
 import WorkDisplay from "./WorkDisplay";
 import ExtraSectionsInput from "./ExtraSectionsInput";
-// import ExtraDisplay from "./ExtraSectionsDisplay";
 
 function Main() {
   const [contact, setContact] = useState({
@@ -96,7 +95,6 @@ function Main() {
           <ProfileDisplay profile={profile} />
           <EducationDisplay education={education} />
           <WorkDisplay work={work} />
-          {/* <ExtraDisplay extra={extra} /> */}
         </div>
       </section>
     </main>

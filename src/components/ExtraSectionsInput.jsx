@@ -77,7 +77,8 @@ function deleteEntry(originalEntry, extra, onExtraChange, target) {
 
 function itemInput(item, itemIndex, entry, extra, onExtraChange) {
   return (
-    <div className="itemInput" key={`item-${itemIndex}`}>
+    <div className="itemInput items" key={`item-${itemIndex}`}>
+      •
       <label className="inputLabel">
         <input
           type="text"
@@ -144,32 +145,17 @@ function addNewItem(originalEntry, extra, onExtraChange) {
   onExtraChange(newExtra);
 }
 
-// function sectionTitle({ entry, extra, onExtraChange }) {
-//   return (
-//     <>
-//       <p>{entry.title}</p>
-//       <img
-//         src="../img/edit.svg"
-//         className="edit"
-//         onClick={(e) => editSectionTitle(entry, extra, onExtraChange, e.target)}
-//       />
-//     </>
-//   );
-// }
+function handleTitleChange(originalEntry, extra, onExtraChange, newTitle) {
+  let newExtra = extra.map((entry) => {
+    if (entry.id === originalEntry.id) {
+      entry.title = newTitle;
+    }
+    return entry;
+  });
 
-// function editSectionTitle() {}
+  onExtraChange(newExtra);
+}
 
-// onClick={(e) =>
-//               editSectionTitle(entry, extra, onExtraChange, e.target)
-//             }
-
-// Need to figure out how to change the title of the section and then display it like the rest of the headings in the input section
-// Maybe an edit button that changes the title to an input? and when you press enter or click away it locks in
-// SectionTitle is an attempt to display either just the title or an input box to change the title, depending on a CSS class.
-// Kind of like a show/hide situtation
-// The edit button is there... maybe if the edit button is clicked, the title turns into an input and an "edit" class is added
-// Once enter is pressed or focus is lost, the "edit" class si removed
-// The edit button is currently not working because it is buried within the show/hide button
 function ExtraEntryInput(entry, extra, onExtraChange) {
   return (
     <div className="entryInputContainer" key={entry.id}>
@@ -178,8 +164,18 @@ function ExtraEntryInput(entry, extra, onExtraChange) {
         onClick={(e) => toggleContainerDisplay(e.target)}
       >
         <div className="sectionHeader">
-          <p>{entry.title}</p>
-          <img src="../img/edit.svg" className="edit" />
+          <label className="inputLabel">
+            <input
+              type="text"
+              value={entry.title}
+              placeholder="Title"
+              id={entry.title}
+              autoComplete="off"
+              onChange={(e) =>
+                handleTitleChange(entry, extra, onExtraChange, e.target.value)
+              }
+            />
+          </label>
         </div>
         <img src="../img/arrow_dropup.svg" className="arrow" />
       </button>

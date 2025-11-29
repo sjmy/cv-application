@@ -104,9 +104,9 @@ TODO:
       - justification
       - font size
       - font colour
-  - Add Section functionality
-    - title
-      - when title changed, so does the heading in the input and display containers
+  - Add Section functionality DONE
+    - title DONE
+      - when title changed, so does the heading in the input and display containers DONE
     - text area or single field for each item with an "add item" button DONE
     - what does the state look like for user-created sections?
       [

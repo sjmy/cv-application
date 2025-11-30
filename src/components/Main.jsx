@@ -1,5 +1,6 @@
 import "../styles/Main.css";
 import { useState } from "react";
+import { useRef } from "react";
 import ContactInfoInput from "./ContactInfoInput";
 import SidebarDisplay from "./SidebarDisplay";
 import ProfileInput from "./ProfileInput";
@@ -11,6 +12,8 @@ import WorkDisplay from "./WorkDisplay";
 import ExtraSectionsInput from "./ExtraSectionsInput";
 
 function Main() {
+  const contentRef = useRef(null);
+
   const [contact, setContact] = useState({
     id: crypto.randomUUID(),
     name: "Sleve McDichael",
@@ -90,7 +93,7 @@ function Main() {
         <ExtraSectionsInput extra={extra} onExtraChange={setExtra} />
       </section>
       <section className="displaySection">
-        <div className="displaySectionContainer">
+        <div className="displaySectionContainer" ref={contentRef}>
           <SidebarDisplay contact={contact} extra={extra} />
           <ProfileDisplay profile={profile} />
           <EducationDisplay education={education} />

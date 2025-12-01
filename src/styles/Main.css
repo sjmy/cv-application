@@ -16,6 +16,25 @@
   }
 } */
 
+@media print {
+  .displaySectionContainer {
+    height: 100vh !important;
+    size-adjust: 100% !important;
+    font-size: large !important;
+  }
+
+  .displaySectionContainer img {
+    height: 1.5vh !important;
+  }
+
+  .displayName {
+    font-size: 4vh !important;
+  }
+  .displayTitle {
+    font-size: 2.5vh !important;
+  }
+}
+
 main {
   padding: 10px;
   display: flex;
@@ -40,7 +59,8 @@ main {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(10, 1fr);
   font-size: 0.68vw;
-  aspect-ratio: 8.5 / 11;
+  aspect-ratio: 210 / 297;
+  color: black;
   background-color: white;
   padding: 7%;
 }

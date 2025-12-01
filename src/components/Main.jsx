@@ -1,6 +1,5 @@
 import "../styles/Main.css";
 import { useState } from "react";
-import { useRef } from "react";
 import ContactInfoInput from "./ContactInfoInput";
 import SidebarDisplay from "./SidebarDisplay";
 import ProfileInput from "./ProfileInput";
@@ -11,9 +10,7 @@ import WorkInput from "./WorkInput";
 import WorkDisplay from "./WorkDisplay";
 import ExtraSectionsInput from "./ExtraSectionsInput";
 
-function Main() {
-  const contentRef = useRef(null);
-
+function Main({ contentRef }) {
   const [contact, setContact] = useState({
     id: crypto.randomUUID(),
     name: "Sleve McDichael",

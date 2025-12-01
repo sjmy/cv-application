@@ -8,4 +8,4 @@ Future development ideas: formatting options (justification, font size and colou
 
 Uses [react-to-print](https://www.npmjs.com/package/react-to-print) to print/download the display CV container.
 
-Deployed using [Vercel][https://cv-application-swart-psi.vercel.app/]
+Deployed using [Vercel](https://cv-application-swart-psi.vercel.app/)

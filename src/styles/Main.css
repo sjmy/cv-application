@@ -16,11 +16,19 @@
   }
 } */
 
+@page {
+  size: A4;
+  margin: 10mm;
+}
+
 @media print {
   .displaySectionContainer {
     height: 100vh !important;
+    width: 210mm !important;
     size-adjust: 100% !important;
     font-size: large !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .displaySectionContainer img {

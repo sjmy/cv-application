@@ -1,13 +1,7 @@
 import "../styles/Header.css";
-import "../styles/Print.css";
 import { useReactToPrint } from "react-to-print";
-// import { useRef } from "react";
 
 function Header({ contentRef }) {
-  // const displaySectionContainer = document.querySelector(
-  //   ".displaySectionContainer"
-  // );
-  // const contentRef = useRef(displaySectionContainer.contentRef);
   const reactToPrintFn = useReactToPrint({
     contentRef,
   });

@@ -7,3 +7,5 @@ Built with React. Enter CV details in the forms on the left and see a formatted 
 Future development ideas: formatting options (justification, font size and colour, backgrounds), add sections to main body and rename them, drag to reorder sections/items on the input side. Display scaling needs work. Download/print representation currently does not match perfectly.
 
 Uses [react-to-print](https://www.npmjs.com/package/react-to-print) to print/download the display CV container.
+
+Deployed using [Vercel][https://cv-application-swart-psi.vercel.app/]
